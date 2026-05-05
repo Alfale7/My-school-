@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدرسة اليرموك - أعمالنا الرقمية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a2a6c;
+            --accent-color: #b89535;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            padding: 1.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--white);
+            font-size: 0.95rem;
+            padding: 4px 8px;
+            transition: 0.3s;
+        }
+
+        nav ul li a.active {
+            color: var(--accent-color);
+        }
+
+        .works-container {
+            padding: 50px 20px;
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .work-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .work-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .work-card h3 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            background-color: var(--accent-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            border-top: 3px solid var(--accent-color);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🏛️ مدرسة اليرموك الثانوية</div>
+        <nav>
+            <ul>
+                <!-- تم تحديث الروابط لربط الموقع بالكامل -->
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عن المدرسة</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="works.html" class="active">أعمالنا الرقمية</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="works-container">
+        <h2 style="color: var(--primary-color); font-size: 2rem;">سجل الإنجازات والأعمال الرقمية</h2>
+        <div style="width: 60px; height: 3px; background: var(--accent-color); margin: 10px auto 40px;"></div>
+
+        <div class="works-grid">
+            
+            <div class="work-card">
+                <div class="work-icon">🛡️</div>
+                <h3>حملة التوعية بالجرائم المعلوماتية</h3>
+                <a href="https://alfale7.github.io/Ahmed/" target="_blank" class="project-link">استعراض العمل 🔗</a>
+            </div>
+
+            <div class="work-card">
+                <div class="work-icon">✨</div>
+                <h3>برنامج قيم السلوك الإيجابي</h3>
+                <a href="https://padlet.com/alyarmoukschool/padlet-eq3hyov9hj5mo2ao" target="_blank" class="project-link">استعراض العمل 🔗</a>
+            </div>
+
+            <div class="work-card">
+                <div class="work-icon">🇸🇦</div>
+                <h3>اليوم الوطني السعودي 94</h3>
+                <a href="https://padlet.com/alfale7_s/94-kijfw2z4y8b37iyh" target="_blank" class="project-link">استعراض العمل 🔗</a>
+            </div>
+
+            <div class="work-card">
+                <div class="work-icon">🚫</div>
+                <h3>خطر استخدام الجوال أثناء القيادة</h3>
+                <a href="https://padlet.com/alyarmoukschool/padlet-yf8l844c8lxlu52b" target="_blank" class="project-link">استعراض العمل 🔗</a>
+            </div>
+
+            <div class="work-card">
+                <div class="work-icon">🌙</div>
+                <h3>بطاقة تهنئة بعيد الفطر المبارك</h3>
+                <a href="https://alfale7.github.io/Eid/" target="_blank" class="project-link">استعراض العمل 🔗</a>
+            </div>
+
+            <div class="work-card">
+                <div class="work-icon">🏗️</div>
+                <h3>بطاقة تهنئة بيوم التأسيس</h3>
+                <a href="https://alfale7.github.io/Saudi/" target="_blank" class="project-link">استعراض العمل 🔗</a>
+            </div>
+
+            <div class="work-card">
+                <div class="work-icon">🚭</div>
+                <h3>خطر التدخين والشيشة الإلكترونية</h3>
+                <a href="https://padlet.com/Alyarmouk/padlet-vxsd335reoyy49ae" target="_blank" class="project-link">استعراض العمل 🔗</a>
+            </div>
+
+            <div class="work-card">
+                <div class="work-icon">🤝</div>
+                <h3>لا للتنمر</h3>
+                <a href="https://padlet.com/Alyarmouk/padlet-7wbnwcjxy5648769" target="_blank" class="project-link">استعراض العمل 🔗</a>
+            </div>
+
+            <div class="work-card">
+                <div class="work-icon">⚽</div>
+                <h3>استضافة المملكة لكأس العالم 2034</h3>
+                <a href="https://padlet.com/alyarmoukschool/padlet-y7k0368chnhip4vv" target="_blank" class="project-link">استعراض العمل 🔗</a>
+            </div>
+
+            <div class="work-card">
+                <div class="work-icon">⚖️</div>
+                <h3>اليوم العالمي لمكافحة الفساد</h3>
+                <a href="https://alfale7.github.io/Corruption/" target="_blank" class="project-link">استعراض العمل 🔗</a>
+            </div>
+
+            <div class="work-card">
+                <div class="work-icon">📝</div>
+                <h3>جدول اختبارات منتصف الفصل</h3>
+                <a href="https://alfale7.github.io/Alyarmouk1/" target="_blank" class="project-link">استعراض العمل 🔗</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 - مدرسة اليرموك الثانوية</p>
+    </footer>
+
+</body>
+</html>

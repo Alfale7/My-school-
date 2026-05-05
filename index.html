@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدرسة اليرموك الثانوية - الرئيسية</title>
+    <!-- استيراد خط Tajawal الفاخر -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a2a6c; /* كحلي فاخر */
+            --accent-color: #b89535;  /* ذهبي هادئ */
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --text-gray: #555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- الهيدر الفاخر --- */
+        header {
+            background-color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            padding: 1.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--white);
+            font-size: 0.95rem;
+            padding: 4px 8px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        /* تفعيل اللون الذهبي للرابط النشط (الرئيسية) */
+        nav ul li a.active, nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- قسم المحتوى الرئيسي --- */
+        .main-section {
+            padding: 60px 20px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .section-header h2 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .underline {
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 0 auto 40px;
+        }
+
+        /* --- بطاقات المميزات --- */
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* --- الفوتر (الحقوق) --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            border-top: 3px solid var(--accent-color);
+            margin-top: 40px;
+        }
+
+        /* استجابة الجوال */
+        @media (max-width: 768px) {
+            .section-header h2 { font-size: 1.8rem; }
+            .logo { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            🏛️ <span>مدرسة اليرموك الثانوية</span>
+        </div>
+        <nav>
+            <ul>
+                <!-- تم الربط بجميع ملفاتك الآن بناءً على الصور المرفقة -->
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="about.html">عن المدرسة</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="works.html">أعمالنا الرقمية</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-section">
+        <div class="section-header">
+            <h2>لماذا اليرموك الثانوية؟</h2>
+            <div class="underline"></div>
+        </div>
+
+        <div class="cards-container">
+            <div class="info-card">
+                <h3>بيئة تعليمية متطورة</h3>
+                <p>نستخدم أحدث التقنيات والوسائل التعليمية لضمان وصول المعلومة بسلاسة لطلابنا.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>كادر تعليمي متميز</h3>
+                <p>نخبة من المعلمين ذوي الخبرة والكفاءة العالية الملتزمين بتطوير قدرات الطلاب.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>بناء الشخصية</h3>
+                <p>نركز على الجوانب التربوية والقيادية لتهيئة الطلاب للمرحلة الجامعية والحياة العملية.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 - مدرسة اليرموك الثانوية</p>
+    </footer>
+
+</body>
+</html>
