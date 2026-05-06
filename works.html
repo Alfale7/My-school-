@@ -45,7 +45,7 @@
         }
 
         .school-logo {
-            font-size: 1.2rem; /* تم توحيد الحجم بناءً على طلبك السابق */
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--accent-color);
             display: flex;
@@ -142,6 +142,32 @@
 
         .btn-visit:hover { background: var(--accent-color); }
 
+        /* --- تنسيق زر العودة للأعلى --- */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: 2px solid var(--accent-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: 0.3s ease;
+            line-height: 46px; /* لتوسيط السهم */
+        }
+
+        #backToTop:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
         /* --- الفوتر --- */
         footer {
             background-color: var(--primary-color);
@@ -157,6 +183,7 @@
             .school-logo { font-size: 1.1rem; }
             .ministry-logo img { height: 45px; }
             .header-section h1 { font-size: 1.8rem; }
+            #backToTop { bottom: 20px; right: 20px; width: 45px; height: 45px; font-size: 20px; }
         }
     </style>
 </head>
@@ -190,29 +217,26 @@
         </div>
 
         <div class="works-grid">
-
-            <!-- العمل الجديد 1: المساعد الذكي -->
+            <!-- أعمالك الرقمية (نفس المحتوى السابق) -->
             <div class="work-card">
                 <div class="icon-box">🤖</div>
                 <h3>المساعد الذكي لثانوية اليرموك</h3>
                 <a href="https://www.chatbase.co/chatbot-iframe/_gApu7rnjCHxPJVhTKlnR" target="_blank" class="btn-visit">زيارة العمل</a>
             </div>
 
-            <!-- العمل الجديد 2: المكتبة الرقمية -->
             <div class="work-card">
                 <div class="icon-box">📚</div>
                 <h3>المكتبة الرقمية لثانوية اليرموك</h3>
                 <a href="https://alfale7.github.io/Book/index.html" target="_blank" class="btn-visit">زيارة العمل</a>
             </div>
 
-            <!-- العمل 1 -->
             <div class="work-card">
                 <div class="icon-box">🛡️</div>
                 <h3>حملة التوعية بالجرائم المعلوماتية</h3>
                 <a href="https://alfale7.github.io/Ahmed/" target="_blank" class="btn-visit">زيارة العمل</a>
             </div>
 
-            <!-- بقية الأعمال السابقة -->
+            <!-- بقية البطاقات... -->
             <div class="work-card">
                 <div class="icon-box">✨</div>
                 <h3>برنامج قيم السلوك الإيجابي</h3>
@@ -272,13 +296,36 @@
                 <h3>جدول اختبارات منتصف الفصل الثاني</h3>
                 <a href="https://alfale7.github.io/Alyarmouk1/" target="_blank" class="btn-visit">زيارة العمل</a>
             </div>
-
         </div>
     </main>
+
+    <!-- زر العودة للأعلى -->
+    <button onclick="topFunction()" id="backToTop" title="العودة للأعلى">↑</button>
 
     <footer>
         <p>جميع الحقوق محفوظة &copy; 2026 - الصرح الرقمي لثانوية اليرموك</p>
     </footer>
+
+    <script>
+        let mybutton = document.getElementById("backToTop");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 
 </body>
 </html>
