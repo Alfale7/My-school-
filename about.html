@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مدرسة اليرموك الثانوية - عن المدرسة</title>
-    <!-- استيراد الخط -->
+    <!-- استيراد خط Tajawal الفاخر -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -29,28 +29,46 @@
             min-height: 100vh;
         }
 
-        /* --- الهيدر (نفس تنسيق الرئيسية لضمان الوحدة) --- */
+        /* --- الهيدر (مطابق لملف index لضمان الهوية الموحدة) --- */
         header {
             background-color: var(--primary-color);
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            padding: 1.5rem 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
+            padding: 1rem 1.5rem;
             position: sticky;
             top: 0;
             z-index: 1000;
             border-bottom: 3px solid var(--accent-color);
         }
 
-        .logo {
-            font-size: 1.6rem;
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .school-logo {
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--accent-color);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+        }
+
+        .ministry-logo img {
+            height: 60px;
+            width: auto;
+            display: block;
+            filter: brightness(0) invert(1); /* لجعل الشعار أبيض فوق الكحلي */
+        }
+
+        /* --- شريط التنقل --- */
+        nav {
+            background-color: var(--primary-color);
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         nav ul {
@@ -70,30 +88,30 @@
             transition: 0.3s;
         }
 
-        /* تمييز "عن المدرسة" باللون الذهبي لأننا في صفحتها الآن */
+        /* تمييز "عن المدرسة" باللون الذهبي */
         nav ul li a.active, nav ul li a:hover {
             color: var(--accent-color);
         }
 
         /* --- محتوى صفحة عن المدرسة --- */
         .about-section {
-            padding: 40px 20px;
+            padding: 60px 20px;
             flex: 1;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .section-header h2 {
             color: var(--primary-color);
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 10px;
         }
 
         .underline {
-            width: 50px;
+            width: 60px;
             height: 3px;
             background-color: var(--accent-color);
             margin: 0 auto;
@@ -109,10 +127,10 @@
 
         .about-card {
             background: var(--white);
-            padding: 25px;
+            padding: 30px;
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-right: 5px solid var(--accent-color);
+            border-right: 6px solid var(--accent-color); /* تمييز ذهبي جانبي */
         }
 
         .about-card h3 {
@@ -126,6 +144,7 @@
         .about-card p {
             color: var(--text-dark);
             line-height: 1.8;
+            font-size: 1.05rem;
         }
 
         /* --- الفوتر --- */
@@ -139,25 +158,37 @@
         }
 
         @media (max-width: 768px) {
-            .logo { font-size: 1.4rem; }
+            .header-content { flex-direction: row; justify-content: space-between; }
+            .school-logo { font-size: 1.1rem; }
+            .ministry-logo img { height: 45px; }
+            .section-header h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">🏛️ مدرسة اليرموك الثانوية</div>
-        <nav>
-            <ul>
-                <!-- تم تحديث روابط التنقل لربط كافة أقسام الموقع -->
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="about.html" class="active">عن المدرسة</a></li>
-                <li><a href="services.html">الخدمات</a></li>
-                <li><a href="works.html">أعمالنا الرقمية</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <div class="school-logo">
+                🏛️ <span>مدرسة اليرموك الثانوية</span>
+            </div>
+            
+            <div class="ministry-logo">
+                <!-- استخدام الشعار المحلي logo.png كما في الرئيسية -->
+                <img src="logo.png" alt="وزارة التعليم">
+            </div>
+        </div>
     </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html" class="active">عن المدرسة</a></li>
+
+            <li><a href="works.html">أعمالنا الرقمية</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+    </nav>
 
     <main class="about-section">
         <div class="section-header">

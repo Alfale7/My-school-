@@ -29,28 +29,48 @@
             min-height: 100vh;
         }
 
-        /* --- الهيدر الفاخر --- */
+        /* --- الهيدر المطور مع الشعار المحلي --- */
         header {
             background-color: var(--primary-color);
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            padding: 1.5rem 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
+            padding: 1rem 1.5rem;
             position: sticky;
             top: 0;
             z-index: 1000;
             border-bottom: 3px solid var(--accent-color);
         }
 
-        .logo {
-            font-size: 1.6rem;
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .school-logo {
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--accent-color);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+        }
+
+        /* تنسيق الشعار المعتمد على ملف logo.png */
+        .ministry-logo img {
+            height: 60px; /* حجم مثالي للشعار */
+            width: auto;
+            display: block;
+            /* ملاحظة: إذا كان شعارك ملوناً وتريد بقاء ألوانه، احذف سطر filter أدناه */
+            filter: brightness(0) invert(1); 
+        }
+
+        /* --- شريط التنقل --- */
+        nav {
+            background-color: var(--primary-color);
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         nav ul {
@@ -70,7 +90,6 @@
             transition: 0.3s;
         }
 
-        /* تفعيل اللون الذهبي للرابط النشط (الرئيسية) */
         nav ul li a.active, nav ul li a:hover {
             color: var(--accent-color);
         }
@@ -125,7 +144,25 @@
             line-height: 1.7;
         }
 
-        /* --- الفوتر (الحقوق) --- */
+        /* --- قسم المساعد الافتراضي --- */
+        .bot-section {
+            padding: 60px 20px;
+            background-color: #f1f3f7;
+            text-align: center;
+        }
+
+        .bot-frame {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-bottom: 5px solid var(--accent-color);
+            overflow: hidden;
+        }
+
+        /* --- الفوتر --- */
         footer {
             background-color: var(--primary-color);
             color: var(--white);
@@ -137,28 +174,37 @@
 
         /* استجابة الجوال */
         @media (max-width: 768px) {
+            .header-content { flex-direction: row; justify-content: space-between; }
             .section-header h2 { font-size: 1.8rem; }
-            .logo { font-size: 1.4rem; }
+            .school-logo { font-size: 1.1rem; }
+            .ministry-logo img { height: 45px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">
-            🏛️ <span>مدرسة اليرموك الثانوية</span>
+        <div class="header-content">
+            <div class="school-logo">
+                🏛️ <span>مدرسة اليرموك الثانوية</span>
+            </div>
+            
+            <div class="ministry-logo">
+                <!-- تم تغيير المصدر إلى ملف محلي باسم logo.png -->
+                <img src="logo.png" alt="وزارة التعليم">
+            </div>
         </div>
-        <nav>
-            <ul>
-                <!-- تم الربط بجميع ملفاتك الآن بناءً على الصور المرفقة -->
-                <li><a href="index.html" class="active">الرئيسية</a></li>
-                <li><a href="about.html">عن المدرسة</a></li>
-                <li><a href="services.html">الخدمات</a></li>
-                <li><a href="works.html">أعمالنا الرقمية</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
-            </ul>
-        </nav>
     </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li><a href="about.html">عن المدرسة</a></li>
+
+            <li><a href="works.html">أعمالنا الرقمية</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+    </nav>
 
     <main class="main-section">
         <div class="section-header">
@@ -183,6 +229,21 @@
             </div>
         </div>
     </main>
+
+    <section class="bot-section">
+        <div class="section-header">
+            <h2>المساعد الافتراضي</h2>
+            <div class="underline" style="margin-bottom: 30px;"></div>
+        </div>
+        <div class="bot-frame">
+            <iframe
+                src="https://www.chatbase.co/chatbot-iframe/_gApu7rnjCHxPJVhTKlnR"
+                width="100%"
+                style="height: 550px; border: none; border-radius: 12px;"
+                frameborder="0"
+            ></iframe>
+        </div>
+    </section>
 
     <footer>
         <p>جميع الحقوق محفوظة &copy; 2026 - مدرسة اليرموك الثانوية</p>

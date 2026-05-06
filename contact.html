@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مدرسة اليرموك - اتصل بنا</title>
+    <title>مدرسة اليرموك الثانوية - اتصل بنا</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -11,15 +11,10 @@
             --accent-color: #b89535;
             --bg-light: #f8f9fa;
             --white: #ffffff;
-            --text-dark: #333;
+            --black-solid: #000000;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
 
         body {
             background-color: var(--bg-light);
@@ -28,23 +23,43 @@
             min-height: 100vh;
         }
 
+        /* --- الهيدر (تم ضبط حجم الخط هنا ليتناسب مع باقي الصفحات) --- */
         header {
             background-color: var(--primary-color);
-            padding: 1.5rem 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
+            padding: 0.8rem 1.5rem; /* تقليل البادينج قليلاً */
             position: sticky;
             top: 0;
             z-index: 1000;
             border-bottom: 3px solid var(--accent-color);
         }
 
-        .logo {
-            font-size: 1.6rem;
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .school-logo {
+            /* تعديل الحجم ليكون 1.2rem بدلاً من 1.4rem ليتناسب مع الصورة المرفقة */
+            font-size: 1.2rem; 
             font-weight: 700;
             color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ministry-logo img {
+            height: 55px; /* ضبط الارتفاع ليتناسب مع الهيدر */
+            filter: brightness(0) invert(1);
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         nav ul {
@@ -57,70 +72,80 @@
         nav ul li a {
             text-decoration: none;
             color: var(--white);
-            font-size: 0.95rem;
-            padding: 4px 8px;
+            font-size: 0.9rem; /* توحيد حجم خط الروابط */
             transition: 0.3s;
         }
 
-        nav ul li a.active {
-            color: var(--accent-color);
-        }
+        nav ul li a.active { color: var(--accent-color); font-weight: bold; }
 
-        .contact-container {
-            padding: 50px 20px;
+        /* --- محتوى الصفحة --- */
+        .main-content {
             flex: 1;
-            max-width: 900px;
-            margin: 0 auto;
-            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 15px;
         }
 
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .contact-info h3 {
+        .section-title {
             color: var(--primary-color);
-            margin-bottom: 25px;
-            font-size: 1.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
         }
 
-        .info-item {
+        .gold-line {
+            width: 60px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 0 auto 30px;
+        }
+
+        /* شريط الأيقونات بالبروز الذهبي السفلي */
+        .social-icons-bar {
+            background: var(--black-solid);
+            padding: 15px 45px;
+            border-radius: 50px;
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            border-bottom: 4px solid var(--accent-color); 
+        }
+
+        .social-icons-bar a {
+            font-size: 2.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
         }
 
-        .info-icon { font-size: 1.5rem; color: var(--accent-color); }
-
-        .info-text p { color: var(--text-dark); font-size: 0.95rem; font-weight: bold; }
-        .info-text span { color: #777; font-size: 0.85rem; }
-
-        .contact-form { display: flex; flex-direction: column; gap: 15px; }
-        .form-group { display: flex; flex-direction: column; gap: 5px; }
-        .form-group label { font-size: 0.9rem; color: var(--primary-color); font-weight: bold; }
-        .form-group input, .form-group textarea {
-            padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem;
+        .youtube-logo {
+            width: 45px;
+            height: auto;
         }
 
-        .submit-btn {
-            background-color: var(--primary-color);
-            color: var(--white);
+        .social-icons-bar a:hover { transform: scale(1.2); }
+
+        .form-frame {
+            width: 100%;
+            max-width: 850px;
+            background: var(--white);
+            border-radius: 20px;
             padding: 15px;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-bottom: 5px solid var(--accent-color); 
+            overflow: hidden;
         }
 
-        .submit-btn:hover { background-color: var(--accent-color); }
+        iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            border-radius: 12px;
+            display: block;
+        }
 
         footer {
             background-color: var(--primary-color);
@@ -128,72 +153,62 @@
             text-align: center;
             padding: 20px;
             border-top: 3px solid var(--accent-color);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .school-logo { font-size: 1.1rem; }
+            .social-icons-bar { gap: 20px; padding: 12px 30px; }
+            .social-icons-bar a { font-size: 1.8rem; }
+            .youtube-logo { width: 35px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">🏛️ مدرسة اليرموك الثانوية</div>
-        <nav>
-            <ul>
-                <!-- تم تحديث الروابط وربط ملف works.html -->
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="about.html">عن المدرسة</a></li>
-                <li><a href="services.html">الخدمات</a></li>
-                <li><a href="works.html">أعمالنا الرقمية</a></li>
-                <li><a href="contact.html" class="active">اتصل بنا</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <div class="school-logo">
+                🏛️ <span>مدرسة اليرموك الثانوية</span>
+            </div>
+            <div class="ministry-logo">
+                <img src="logo.png" alt="وزارة التعليم">
+            </div>
+        </div>
     </header>
 
-    <main class="contact-container">
-        <div style="text-align: center; margin-bottom: 40px;">
-            <h2 style="color: var(--primary-color); font-size: 2rem;">تواصل معنا</h2>
-            <div style="width: 50px; height: 3px; background: var(--accent-color); margin: 10px auto;"></div>
+    <nav>
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html">عن المدرسة</a></li>
+
+            <li><a href="works.html">أعمالنا الرقمية</a></li>
+            <li><a href="contact.html" class="active">اتصل بنا</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <h2 class="section-title">تواصل معنا</h2>
+        <div class="gold-line"></div>
+
+        <div class="social-icons-bar">
+            <a href="https://maps.app.goo.gl/YFbrvq2e7AZ667y39?g_st=ic" target="_blank" title="موقع المدرسة">📍</a>
+            <a href="https://www.chatbase.co/chatbot-iframe/_gApu7rnjCHxPJVhTKlnR" target="_blank" title="المساعد الذكي">🤖</a>
+            <a href="https://youtube.com/@alyarmoukschool?si=N3nt3deJYeCfN8_C" target="_blank" title="قناة اليوتيوب">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" class="youtube-logo">
+            </a>
+            <a href="mailto:842225@jb.moe.gov.sa" title="البريد الإلكتروني">📧</a>
         </div>
 
-        <div class="contact-wrapper">
-            <div class="contact-info">
-                <h3>بيانات التواصل الرسمي</h3>
-                
-                <div class="info-item">
-                    <span class="info-icon">📧</span>
-                    <div class="info-text">
-                        <span>البريد الإلكتروني الرسمي</span>
-                        <p style="direction: ltr; text-align: right;">842225@jb.moe.gov.sa</p>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <span class="info-icon">📍</span>
-                    <div class="info-text">
-                        <span>العنوان</span>
-                        <p>الجوف - سكاكا</p>
-                    </div>
-                </div>
-            </div>
-
-            <form class="contact-form">
-                <div class="form-group">
-                    <label>الاسم</label>
-                    <input type="text" required>
-                </div>
-                <div class="form-group">
-                    <label>البريد الإلكتروني</label>
-                    <input type="email" required>
-                </div>
-                <div class="form-group">
-                    <label>الرسالة</label>
-                    <textarea rows="4" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">إرسال الاستفسار</button>
-            </form>
+        <div class="form-frame">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd08wuMrzNQld3xMKTaMAtVU587_hrabzBr0qVDihIE7Mb4jA/viewform?embedded=true">
+                جاري التحميل...
+            </iframe>
         </div>
     </main>
 
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 - مدرسة اليرموك الثانوية</p>
+        <p>جميع الحقوق محفوظة © 2026 - مدرسة اليرموك الثانوية</p>
     </footer>
 
 </body>
