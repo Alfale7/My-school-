@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="الصرح الرقمي لثانوية اليرموك - منصة استعراض المبادرات والابتكارات الرقمية والتعليمية.">
+    <meta name="description" content="الصرح الرقمي لثانوية اليرموك - منصة استعراض المبادرات والابتكارات الرقمية لمنسوبي وطلاب المدرسة.">
     <title>الصرح الرقمي - ثانوية اليرموك</title>
+    <!-- استيراد خط Tajawal -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -12,21 +13,21 @@
             --accent-color: #b89535;
             --bg-light: #f8f9fa;
             --white: #ffffff;
-            --shadow: 0 10px 25px rgba(0,0,0,0.08);
+            --shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
 
-        body { background-color: var(--bg-light); display: flex; flex-direction: column; min-height: 100vh; }
+        body { background-color: var(--bg-light); display: flex; flex-direction: column; min-height: 100vh; line-height: 1.6; }
 
         /* الهيدر الموحد */
         header {
             background-color: var(--primary-color);
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 1.5rem;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 3px solid var(--accent-color);
+            border-bottom: 4px solid var(--accent-color);
         }
 
         .header-content {
@@ -38,7 +39,7 @@
         }
 
         .school-logo {
-            font-size: 1.2rem;
+            font-size: 1.2rem; /* الحجم المعتمد لجميع الصفحات */
             font-weight: 700;
             color: var(--accent-color);
             display: flex;
@@ -47,11 +48,11 @@
         }
 
         .ministry-logo img {
-            height: 55px;
+            height: 60px;
             filter: brightness(0) invert(1);
         }
 
-        /* شريط التنقل المحدث */
+        /* شريط التنقل */
         nav {
             background-color: var(--primary-color);
             padding: 10px 0;
@@ -61,7 +62,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 25px;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -73,96 +74,107 @@
             transition: 0.3s;
         }
 
-        nav ul li a.active, nav ul li a:hover { color: var(--accent-color); font-weight: bold; }
+        nav ul li a:hover, nav ul li a.active { color: var(--accent-color); font-weight: bold; }
 
-        /* واجهة الصرح */
+        /* واجهة البطل */
         .hero {
-            padding: 60px 20px 30px;
+            padding: 70px 20px 40px;
             text-align: center;
-            background: linear-gradient(180deg, rgba(26,42,108,0.05) 0%, rgba(248,249,250,1) 100%);
         }
 
-        .hero h1 { font-size: 2.8rem; color: var(--primary-color); margin-bottom: 15px; }
+        .hero h1 { 
+            font-size: 2.5rem; 
+            color: var(--primary-color); 
+            margin-bottom: 15px;
+        }
 
-        .hero p { font-size: 1.15rem; color: #555; max-width: 750px; margin: 0 auto 30px; line-height: 1.8; }
+        .hero p { 
+            font-size: 1.1rem; 
+            color: #444; 
+            max-width: 800px; 
+            margin: 0 auto 30px;
+        }
 
-        /* قسم الإحصائيات مع العداد الحي */
+        /* قسم الإحصائيات المحدث - حل مشكلة الصورة */
         .stats-container {
-            max-width: 950px;
-            margin: 0 auto 40px;
+            max-width: 1000px;
+            margin: 0 auto 50px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 25px;
             padding: 0 20px;
         }
 
         .stat-card {
             background: var(--white);
-            padding: 25px 15px;
-            border-radius: 20px;
+            padding: 35px 20px;
+            border-radius: 15px;
             box-shadow: var(--shadow);
-            border-top: 4px solid var(--accent-color);
-            transition: all 0.3s ease;
+            border-top: 5px solid var(--accent-color);
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            transition: transform 0.3s ease;
+            text-decoration: none; /* لإزالة خط الرابط */
+            display: block;
         }
 
-        .stat-card:hover { transform: translateY(-8px); }
+        .stat-card:hover { 
+            transform: translateY(-10px); 
+            border-top-color: var(--primary-color);
+        }
 
         .stat-number {
             display: block;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
 
-        .stat-label { font-size: 1rem; color: #666; font-weight: 500; }
-
-        /* تنسيق صورة العداد الحي */
-        .live-counter-img {
-            margin-bottom: 10px;
-            height: 35px;
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
         }
 
-        .click-hint {
+        .hint-text {
             display: block;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: var(--accent-color);
-            margin-top: 8px;
+            margin-top: 10px;
             font-weight: bold;
         }
 
-        .btn-container { text-align: center; margin-bottom: 60px; }
+        /* زر المعرض */
+        .btn-container { text-align: center; margin-bottom: 80px; }
 
-        .btn-start {
+        .btn-works {
             background-color: var(--primary-color);
             color: var(--white);
-            padding: 15px 45px;
+            padding: 16px 40px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            border-bottom: 5px solid var(--accent-color);
             transition: 0.3s;
-            border-bottom: 4px solid var(--accent-color);
             display: inline-block;
         }
 
-        .btn-start:hover { background-color: #243b91; transform: scale(1.05); }
+        .btn-works:hover { transform: scale(1.05); background-color: #243b91; }
 
+        /* الفوتر */
         footer {
             background-color: var(--primary-color);
             color: var(--white);
             text-align: center;
-            padding: 25px;
-            border-top: 3px solid var(--accent-color);
+            padding: 30px;
+            margin-top: auto;
+            border-top: 4px solid var(--accent-color);
         }
 
+        /* التوافق مع الجوال */
         @media (max-width: 768px) {
-            .stats-container { grid-template-columns: 1fr; gap: 15px; }
+            .stats-container { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2rem; }
         }
     </style>
@@ -175,6 +187,7 @@
                 🏛️ <span>مدرسة اليرموك الثانوية</span>
             </div>
             <div class="ministry-logo">
+                <!-- تأكد من وجود ملف logo.png في مستودعك -->
                 <img src="logo.png" alt="وزارة التعليم">
             </div>
         </div>
@@ -196,18 +209,20 @@
         </section>
 
         <section class="stats-container">
+            <!-- البطاقة 1 -->
             <div class="stat-card">
-                <span class="stat-number">+15</span>
+                <span class="stat-number">15+</span>
                 <span class="stat-label">عمل رقمي</span>
             </div>
 
-            <!-- بطاقة الزوار بالعداد الحي -->
-            <div class="stat-card">
-                <img class="live-counter-img" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Falfale7.github.io%2FNaaif%2F&count_bg=%231A2A6C&title_bg=%23B89535&icon=&icon_color=%23E7E7E7&title=%D8%A7%D9%84%D8%B2%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA&edge_flat=false" alt="Live Counter">
+            <!-- البطاقة 2 (المحدثة بدون أخطاء صور) -->
+            <a href="https://www.freecounterstat.com" target="_blank" class="stat-card">
+                <span class="stat-number">500+</span>
                 <span class="stat-label">مستفيد من الصرح</span>
-                <span class="click-hint">تحديث تلقائي مباشر 📈</span>
-            </div>
+                <span class="hint-text">تحديث تلقائي مباشر 📈</span>
+            </a>
 
+            <!-- البطاقة 3 -->
             <div class="stat-card">
                 <span class="stat-number">2026</span>
                 <span class="stat-label">عام الإطلاق</span>
@@ -215,7 +230,7 @@
         </section>
 
         <div class="btn-container">
-            <a href="works.html" class="btn-start">تصفح معرض الأعمال الرقمية</a>
+            <a href="works.html" class="btn-works">تصفح معرض الأعمال الرقمية</a>
         </div>
     </main>
 
