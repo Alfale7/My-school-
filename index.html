@@ -10,166 +10,195 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta property="og:title" content="الصرح الرقمي - ثانوية اليرموك">
-    <meta property="og:description" content="المنصة الرسمية لاستعراض المبادرات والابتكارات الرقمية والتعليمية.">
-    <meta property="og:image" content="https://alfale7.github.io/My-school-/thumb.png">
-    <meta property="og:url" content="https://alfale7.github.io/My-school-/">
-    <meta property="og:type" content="website">
-
-    <title>الصرح الرقمي - ثانوية اليرموك</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>صرح اليرموك الرقمي -  </title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary-color: #1a2a6c;
-            --accent-color: #b89535;
-            --bg-light: #f8f9fa;
-            --white: #ffffff;
-            --shadow: 0 10px 25px rgba(0,0,0,0.1);
+            --primary-glow: #1e3a8a; /* كحلي حي ومشرق */
+            --accent-gold: #c5a059;  /* ذهبي ملكي فاتح */
+            --bg-dark: #020617;     /* خلفية عميقة وأنيقة */
+            --card-light: #f8fafc;  /* أبيض مريح للعين */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
 
-        body { background-color: var(--bg-light); display: flex; flex-direction: column; min-height: 100vh; }
-
-        header {
-            background-color: var(--primary-color);
-            padding: 1rem 1.5rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 4px solid var(--accent-color);
-        }
-
-        .header-content {
-            max-width: 1100px; margin: 0 auto;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-
-        .school-logo {
-            font-size: 1.2rem; font-weight: 700; color: var(--accent-color);
-            display: flex; align-items: center; gap: 10px;
-        }
-
-        .ministry-logo img { height: 60px; filter: brightness(0) invert(1); }
-
-        nav { background-color: var(--primary-color); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-
-        nav ul { display: flex; list-style: none; gap: 25px; justify-content: center; flex-wrap: wrap; }
-
-        nav ul li a { text-decoration: none; color: var(--white); font-size: 0.95rem; transition: 0.3s; }
-
-        nav ul li a:hover, nav ul li a.active { color: var(--accent-color); font-weight: bold; }
-
-        .hero { padding: 70px 20px 40px; text-align: center; }
-
-        .hero h1 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
-
-        .hero p { font-size: 1.1rem; color: #444; max-width: 800px; margin: 0 auto 30px; }
-
-        .stats-container {
-            max-width: 1000px; margin: 0 auto 50px;
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; padding: 0 20px;
-        }
-
-        .stat-card {
-            background: var(--white); padding: 35px 20px; border-radius: 15px;
-            box-shadow: var(--shadow); border-top: 5px solid var(--accent-color);
-            text-align: center; transition: transform 0.3s ease; text-decoration: none; display: block;
-        }
-
-        .stat-card:hover { transform: translateY(-10px); border-top-color: var(--primary-color); }
-
-        .stat-number { display: block; font-size: 2.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 5px; }
-
-        .stat-label { font-size: 1rem; color: #666; font-weight: 500; }
-
-        .hint-text { display: block; font-size: 0.75rem; color: var(--accent-color); margin-top: 10px; font-weight: bold; }
-
-        .btn-container { text-align: center; margin-bottom: 80px; }
-
-        .btn-works {
-            background-color: var(--primary-color); color: var(--white); padding: 16px 40px;
-            border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.2rem;
-            border-bottom: 5px solid var(--accent-color); transition: 0.3s; display: inline-block;
-        }
-
-        .btn-works:hover { transform: scale(1.05); background-color: #243b91; }
-
-        footer {
-            background-color: var(--primary-color); color: var(--white); text-align: center;
-            padding: 30px; margin-top: auto; border-top: 4px solid var(--accent-color);
-        }
-        
-        /* تنسيق إضافي للعداد ليتوسط التذييل */
-        .counter-wrapper {
-            margin-top: 15px;
+        body {
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 50% -20%, #2563eb, transparent 60%),
+                              radial-gradient(circle at 10% 90%, #1e3a8a, transparent 40%);
+            height: 100vh;
             display: flex;
+            flex-direction: column;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* هيدر عصري ومشرق */
+        header {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .logo-area { display: flex; align-items: center; gap: 10px; color: var(--accent-gold); font-weight: bold; }
+        .logo-area img { height: 45px; filter: brightness(0) invert(1); }
+
+        /* لوحة التحكم التفاعلية */
+        .dashboard {
+            flex: 1;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
             justify-content: center;
         }
 
-        @media (max-width: 768px) { .stats-container { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } }
+        /* كرت الترحيب الفاخر */
+        .welcome-card {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(37, 99, 235, 0.7));
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-card::after {
+            content: "🏛️";
+            position: absolute;
+            top: -10px; left: -10px;
+            font-size: 5rem;
+            opacity: 0.1;
+        }
+
+        .welcome-card h1 { font-size: 1.8rem; margin-bottom: 8px; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .welcome-card p { font-size: 0.9rem; color: #e2e8f0; line-height: 1.5; }
+
+        /* منطقة الإحصائيات المضيئة */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .stat-item {
+            background: var(--card-light);
+            padding: 25px 15px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            border-top: 5px solid var(--accent-gold);
+        }
+
+        .stat-item .value { font-size: 2.2rem; font-weight: 800; color: var(--primary-glow); display: block; }
+        .stat-item .label { font-size: 0.85rem; color: #64748b; font-weight: bold; }
+
+        /* الزر التفاعلي المضيء */
+        .cta-button {
+            background: linear-gradient(90deg, #b89535, #d4af37);
+            color: #1a2a6c;
+            padding: 18px;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 5px 20px rgba(184, 149, 53, 0.4);
+            transition: 0.3s;
+        }
+
+        .cta-button:active { transform: scale(0.95); }
+
+        /* شريط التنقل السفلي */
+        .nav-bar {
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #94a3b8;
+            font-size: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link.active { color: var(--accent-gold); }
+        .nav-link span { font-size: 1.3rem; }
+
+        footer {
+            background: #020617;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .counter-container { transform: scale(0.7); margin: 5px auto; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-content">
-            <div class="school-logo">🏛️ <span>مدرسة اليرموك الثانوية</span></div>
-            <div class="ministry-logo"><img src="logo.png" alt="وزارة التعليم"></div>
-        </div>
+        <div class="logo-area">🏛️ <span>مدرسة اليرموك الثانوية</span></div>
+        <div class="logo-area"><img src="logo.png" alt="وزارة التعليم"></div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html" class="active">الرئيسية</a></li>
-            <li><a href="about.html">عن الصرح</a></li>
-            <li><a href="works.html">أعمالنا الرقمية</a></li>
-            <li><a href="contact.html">اتصل بنا</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section class="hero">
-            <h1>الصرح الرقمي</h1>
-            <p>المنصة الرسمية لاستعراض المبادرات والابتكارات الرقمية لمنسوبي وطلاب ثانوية اليرموك، نحو تعليم رقمي متميز يواكب رؤية المملكة 2030.</p>
-        </section>
-
-        <section class="stats-container">
-            <div class="stat-card">
-                <span class="stat-number">15+</span>
-                <span class="stat-label">عمل رقمي</span>
-            </div>
-
-            <div class="stat-card">
-                <span class="stat-number">500+</span>
-                <span class="stat-label">زوار  الصرح</span>
-                <span class="hint-text">إحصائية رسمية موثقة 📊</span>
-            </div>
-
-            <div class="stat-card">
-                <span class="stat-number">2026</span>
-                <span class="stat-label">عام الإطلاق</span>
-            </div>
-        </section>
-
-        <div class="btn-container">
-            <a href="works.html" class="btn-works">تصفح معرض الأعمال الرقمية</a>
+    <main class="dashboard">
+        <!-- الترحيب -->
+        <div class="welcome-card">
+            <h1>صرح اليرموك الرقمي</h1>
+            <p>مرحباً بك في المنصة الرسمية للابتكارات التعليمية والتقنية بمدرسة اليرموك</p>
         </div>
+
+        <!-- الإحصائيات -->
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="value">+15</span>
+                <span class="label">مشروع رقمي</span>
+            </div>
+            <div class="stat-item">
+                <span class="value">+500</span>
+                <span class="label">زائر ومستفيد</span>
+            </div>
+        </div>
+
+        <!-- الزر الرئيسي -->
+        <a href="works.html" class="cta-button">
+            🚀 تصفح معرض الأعمال
+        </a>
     </main>
 
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-link active"><span>🏠</span>الرئيسية</a>
+        <a href="about.html" class="nav-link"><span>ℹ️</span>عن الصرح</a>
+        <a href="works.html" class="nav-link"><span>📂</span>الأعمال</a>
+        <a href="contact.html" class="nav-link"><span>📞</span>اتصل بنا</a>
+    </nav>
+
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 - الصرح الرقمي لثانوية اليرموك</p>
-        
-        <div class="counter-wrapper">
+        <p style="font-size: 0.7rem; color: #64748b; margin-top: 5px;">جميع الحقوق محفوظة &copy; 2026 - صرح اليرموك الرقمي</p>
+        <div class="counter-container">
             <div id="sfc8nrj13xs4up3sn4r725pzb8pnzemeaug"></div>
             <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=8nrj13xs4up3sn4r725pzb8pnzemeaug&down=async" async></script>
-            <noscript>
-                <a href="https://www.freecounterstat.com" title="free counter">
-                    <img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=8nrj13xs4up3sn4r725pzb8pnzemeaug" border="0" title="free counter" alt="free counter">
-                </a>
-            </noscript>
         </div>
     </footer>
 

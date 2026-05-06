@@ -2,9 +2,9 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <!-- أوسمة الميتا لظهور الصورة والبيانات عند المشاركة -->
+    <!-- أوسمة الميتا -->
     <meta property="og:title" content="معرض الأعمال الرقمية - الصرح الرقمي">
     <meta property="og:description" content="استعرض المبادرات والابتكارات الرقمية والتعليمية لطلاب ومنسوبي ثانوية اليرموك.">
     <meta property="og:image" content="https://alfale7.github.io/My-school-/thumb.png">
@@ -12,36 +12,35 @@
     <meta property="og:type" content="website">
 
     <title>أعمالنا الرقمية - مدرسة اليرموك الثانوية</title>
-    <!-- استيراد خط Tajawal الفاخر -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a2a6c; /* كحلي فاخر */
-            --accent-color: #b89535;  /* ذهبي هادئ */
-            --bg-light: #f8f9fa;
+            --primary-glow: #1e3a8a; /* نفس كحلي الإندكس */
+            --accent-gold: #c5a059;  /* نفس الذهبي الملكي */
+            --bg-dark: #020617;     /* الخلفية العميقة */
             --white: #ffffff;
-            --text-dark: #333;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
 
         body { 
-            background-color: var(--bg-light); 
-            color: var(--text-dark); 
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 50% -20%, #2563eb, transparent 60%),
+                              radial-gradient(circle at 90% 90%, #1e3a8a, transparent 40%);
+            color: var(--white); 
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
         }
 
-        /* --- الهيدر الموحد --- */
+        /* --- الهيدر المتناسق --- */
         header {
-            background-color: var(--primary-color);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
             padding: 1rem 1.5rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 3px solid var(--accent-color);
+            border-bottom: 2px solid var(--accent-gold);
+            z-index: 10;
         }
 
         .header-content {
@@ -53,145 +52,140 @@
         }
 
         .school-logo {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            color: var(--accent-color);
+            color: var(--accent-gold);
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
         .ministry-logo img {
-            height: 55px;
-            width: auto;
-            display: block;
+            height: 45px;
             filter: brightness(0) invert(1);
         }
 
         /* --- شريط التنقل --- */
         nav {
-            background-color: var(--primary-color);
+            background: rgba(0,0,0,0.2);
             padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         nav ul {
             display: flex;
             list-style: none;
             gap: 15px;
-            flex-wrap: wrap;
             justify-content: center;
         }
 
         nav ul li a {
             text-decoration: none;
             color: var(--white);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             padding: 4px 8px;
-            font-weight: 500;
+            opacity: 0.7;
             transition: 0.3s;
         }
 
-        nav ul li a.active, nav ul li a:hover {
-            color: var(--accent-color);
+        nav ul li a.active { color: var(--accent-gold); font-weight: bold; opacity: 1; }
+
+        /* --- حاوية الجريدة الرقمية المضيئة --- */
+        .news-slider {
+            flex: 1;
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 20px;
+            gap: 20px;
+            align-items: center;
+            -webkit-overflow-scrolling: touch;
         }
 
-        /* --- محتوى صفحة الأعمال --- */
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 15px; flex: 1; }
+        .news-slider::-webkit-scrollbar { display: none; }
 
-        .header-section { text-align: center; margin-bottom: 50px; }
-
-        .header-section h1 { color: var(--primary-color); font-size: 2.2rem; margin-bottom: 10px; }
-
-        .gold-line { width: 60px; height: 3px; background: var(--accent-color); margin: 0 auto; }
-
-        /* شبكة الأعمال */
-        .works-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        /* تصميم البطاقة ببروز ذهبي */
-        .work-card {
-            background: var(--white);
-            border-radius: 18px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border-bottom: 5px solid var(--accent-color); 
-            transition: all 0.3s ease;
+        .news-card {
+            min-width: 85vw;
+            height: 58vh;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            scroll-snap-align: center;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .work-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(184, 149, 53, 0.2);
+        /* لمسة الإضاءة على الكرت */
+        .news-card::before {
+            content: "";
+            position: absolute;
+            top: 0; right: 0;
+            width: 100px; height: 100px;
+            background: radial-gradient(circle, rgba(197, 160, 89, 0.1), transparent 70%);
         }
 
-        .icon-box { font-size: 2.5rem; margin-bottom: 15px; }
+        .card-category {
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            text-align: center;
+        }
 
-        .work-card h3 { color: var(--primary-color); font-size: 1.1rem; margin-bottom: 12px; min-height: 45px; }
+        .icon-box { font-size: 3.5rem; text-align: center; margin-bottom: 10px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2)); }
+
+        .card-title {
+            font-size: 1.3rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.7;
+            text-align: center;
+            flex-grow: 1;
+        }
 
         .btn-visit {
-            display: inline-block;
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 8px;
+            background: linear-gradient(90deg, #b89535, #d4af37);
+            color: #1a2a6c;
+            text-align: center;
+            padding: 14px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
+            border-radius: 12px;
+            font-weight: 800;
+            box-shadow: 0 5px 15px rgba(184, 149, 53, 0.3);
             transition: 0.3s;
-            margin-top: 15px;
         }
 
-        .btn-visit:hover { background: var(--accent-color); }
+        .btn-visit:active { transform: scale(0.95); }
 
-        /* --- تنسيق زر العودة للأعلى --- */
-        #backToTop {
-            display: none;
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-            background-color: var(--primary-color);
-            color: var(--white);
-            border: 2px solid var(--accent-color);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: 0.3s ease;
-            line-height: 46px; 
-        }
-
-        #backToTop:hover {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            transform: scale(1.1);
-        }
-
-        /* --- الفوتر --- */
+        /* --- الفوتر المتناسق --- */
         footer {
-            background-color: var(--primary-color);
-            color: var(--white);
+            background-color: #020617;
+            color: #64748b;
             text-align: center;
             padding: 20px;
-            border-top: 3px solid var(--accent-color);
-            margin-top: 40px;
+            border-top: 1px solid rgba(197, 160, 89, 0.3);
         }
 
-        @media (max-width: 768px) {
-            .header-content { flex-direction: row; justify-content: space-between; }
-            .school-logo { font-size: 1.1rem; }
-            .ministry-logo img { height: 45px; }
-            .header-section h1 { font-size: 1.8rem; }
-            #backToTop { bottom: 20px; right: 20px; width: 45px; height: 45px; font-size: 20px; }
+        .swipe-hint {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            padding-bottom: 10px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -199,139 +193,132 @@
 
     <header>
         <div class="header-content">
-            <div class="school-logo">
-                🏛️ <span>مدرسة اليرموك الثانوية</span>
-            </div>
-            
-            <div class="ministry-logo">
-                <img src="logo.png" alt="وزارة التعليم">
-            </div>
+            <div class="school-logo">🏛️ <span>مدرسة اليرموك الثانوية</span></div>
+            <div class="ministry-logo"><img src="logo.png" alt="وزارة التعليم"></div>
         </div>
     </header>
 
     <nav>
         <ul>
             <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="about.html">عن المدرسة</a></li>
-            <li><a href="works.html" class="active">أعمالنا الرقمية</a></li>
+            <li><a href="about.html">عن الصرح</a></li>
+            <li><a href="works.html" class="active">أعمالنا</a></li>
             <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
     </nav>
 
-    <main class="container">
-        <div class="header-section">
-            <h1>معرض الأعمال الرقمية</h1>
-            <div class="gold-line"></div>
+    <div class="news-slider">
+        <!-- 1 -->
+        <div class="news-card">
+            <div class="card-category">الذكاء الاصطناعي</div>
+            <div class="icon-box">🤖</div>
+            <h2 class="card-title">المساعد الذكي لثانوية اليرموك</h2>
+            <p class="card-desc">مساعد رقمي متطور يعتمد على الذكاء الاصطناعي للإجابة على استفسارات الطلاب.</p>
+            <a href="https://www.chatbase.co/chatbot-iframe/_gApu7rnjCHxPJVhTKlnR" target="_blank" class="btn-visit">زيارة العمل</a>
         </div>
-
-        <div class="works-grid">
-            <div class="work-card">
-                <div class="icon-box">🤖</div>
-                <h3>المساعد الذكي لثانوية اليرموك</h3>
-                <a href="https://www.chatbase.co/chatbot-iframe/_gApu7rnjCHxPJVhTKlnR" target="_blank" class="btn-visit">زيارة العمل</a>
-            </div>
-
-            <div class="work-card">
-                <div class="icon-box">📚</div>
-                <h3>المكتبة الرقمية لثانوية اليرموك</h3>
-                <a href="https://alfale7.github.io/Book/index.html" target="_blank" class="btn-visit">زيارة العمل</a>
-            </div>
-
-            <div class="work-card">
-                <div class="icon-box">🛡️</div>
-                <h3>حملة التوعية بالجرائم المعلوماتية</h3>
-                <a href="https://alfale7.github.io/Ahmed/" target="_blank" class="btn-visit">زيارة العمل</a>
-            </div>
-
-            <div class="work-card">
-                <div class="icon-box">✨</div>
-                <h3>برنامج قيم السلوك الإيجابي</h3>
-                <a href="https://padlet.com/alyarmoukschool/padlet-eq3hyov9hj5mo2ao" target="_blank" class="btn-visit">زيارة العمل</a>
-            </div>
-
-            <div class="work-card">
-                <div class="icon-box">🇸🇦</div>
-                <h3>اليوم الوطني السعودي 94</h3>
-                <a href="https://padlet.com/alfale7_s/94-kijfw2z4y8b37iyh" target="_blank" class="btn-visit">زيارة العمل</a>
-            </div>
-
-            <div class="work-card">
-                <div class="icon-box">🚗</div>
-                <h3>خطر استخدام الجوال أثناء القيادة</h3>
-                <a href="https://padlet.com/alyarmoukschool/padlet-yf8l844c8lxlu52b" target="_blank" class="btn-visit">زيارة العمل</a>
-            </div>
-
-            <div class="work-card">
-                <div class="icon-box">🌙</div>
-                <h3>بطاقة تهنئة بعيد الفطر</h3>
-                <a href="https://alfale7.github.io/Eid/" target="_blank" class="btn-visit">زيارة العمل</a>
-            </div>
-
-            <div class="work-card">
-                <div class="icon-box">🏛️</div>
-                <h3>بطاقة تهنئة بيوم التأسيس</h3>
-                <a href="https://alfale7.github.io/Saudi/" target="_blank" class="btn-visit">زيارة العمل</a>
-            </div>
-
-            <div class="work-card">
-                <div class="icon-box">🚭</div>
-                <h3>خطر التدخين والشيشة الإلكترونية</h3>
-                <a href="https://padlet.com/Alyarmouk/padlet-vxsd335reoyy49ae" target="_blank" class="btn-visit">زيارة العمل</a>
-            </div>
-
-            <div class="work-card">
-                <div class="icon-box">🚫</div>
-                <h3>لا للتنمر</h3>
-                <a href="https://padlet.com/Alyarmouk/padlet-7wbnwcjxy5648769" target="_blank" class="btn-visit">زيارة العمل</a>
-            </div>
-
-            <div class="work-card">
-                <div class="icon-box">🏆</div>
-                <h3>استضافة كأس العالم 2034</h3>
-                <a href="https://padlet.com/alyarmoukschool/padlet-y7k0368chnhip4vv" target="_blank" class="btn-visit">زيارة العمل</a>
-            </div>
-
-            <div class="work-card">
-                <div class="icon-box">🤝</div>
-                <h3>اليوم العالمي لمكافحة الفساد</h3>
-                <a href="https://alfale7.github.io/Corruption/" target="_blank" class="btn-visit">زيارة العمل</a>
-            </div>
-
-            <div class="work-card">
-                <div class="icon-box">📝</div>
-                <h3>جدول اختبارات منتصف الفصل الثاني</h3>
-                <a href="https://alfale7.github.io/Alyarmouk1/" target="_blank" class="btn-visit">زيارة العمل</a>
-            </div>
+        <!-- 2 -->
+        <div class="news-card">
+            <div class="card-category">المكتبة الرقمية</div>
+            <div class="icon-box">📚</div>
+            <h2 class="card-title">المكتبة الرقمية</h2>
+            <p class="card-desc">بوابة شاملة تجمع المصادر التعليمية والكتب الرقمية في مكان واحد.</p>
+            <a href="https://alfale7.github.io/Book/index.html" target="_blank" class="btn-visit">زيارة العمل</a>
         </div>
-    </main>
+        <!-- 3 -->
+        <div class="news-card">
+            <div class="card-category">التوعية الرقمية</div>
+            <div class="icon-box">🛡️</div>
+            <h2 class="card-title">حملة الجرائم المعلوماتية</h2>
+            <p class="card-desc">مبادرة لرفع الوعي بالأمن السيبراني وحماية البيانات الشخصية.</p>
+            <a href="https://alfale7.github.io/Ahmed/" target="_blank" class="btn-visit">زيارة العمل</a>
+        </div>
+        <!-- 4 -->
+        <div class="news-card">
+            <div class="card-category">القيم التربوية</div>
+            <div class="icon-box">✨</div>
+            <h2 class="card-title">قيم السلوك الإيجابي</h2>
+            <p class="card-desc">منصة رقمية لتعزيز السلوك الإيجابي والقيم التربوية لدى الطلاب.</p>
+            <a href="https://padlet.com/alyarmoukschool/padlet-eq3hyov9hj5mo2ao" target="_blank" class="btn-visit">زيارة العمل</a>
+        </div>
+        <!-- 5 -->
+        <div class="news-card">
+            <div class="card-category">المناسبات الوطنية</div>
+            <div class="icon-box">🇸🇦</div>
+            <h2 class="card-title">اليوم الوطني السعودي 94</h2>
+            <p class="card-desc">احتفالية رقمية تجسد مشاعر الفخر والاعتزاز بالوطن.</p>
+            <a href="https://padlet.com/alfale7_s/94-kijfw2z4y8b37iyh" target="_blank" class="btn-visit">زيارة العمل</a>
+        </div>
+        <!-- 6 -->
+        <div class="news-card">
+            <div class="card-category">السلامة المرورية</div>
+            <div class="icon-box">🚗</div>
+            <h2 class="card-title">خطر الجوال أثناء القيادة</h2>
+            <p class="card-desc">حملة توعوية رقمية تهدف للحد من الحوادث المرورية.</p>
+            <a href="https://padlet.com/alyarmoukschool/padlet-yf8l844c8lxlu52b" target="_blank" class="btn-visit">زيارة العمل</a>
+        </div>
+        <!-- 7 -->
+        <div class="news-card">
+            <div class="card-category">مناسبات دينية</div>
+            <div class="icon-box">🌙</div>
+            <h2 class="card-title">تهنئة عيد الفطر</h2>
+            <p class="card-desc">تصميم رقمي تفاعلي للتهنئة بمناسبة عيد الفطر السعيد.</p>
+            <a href="https://alfale7.github.io/Eid/" target="_blank" class="btn-visit">زيارة العمل</a>
+        </div>
+        <!-- 8 -->
+        <div class="news-card">
+            <div class="card-category">تاريخنا العريق</div>
+            <div class="icon-box">🏛️</div>
+            <h2 class="card-title">تهنئة يوم التأسيس</h2>
+            <p class="card-desc">عمل رقمي يحتفي بذكرى تأسيس الدولة السعودية الأولى.</p>
+            <a href="https://alfale7.github.io/Saudi/" target="_blank" class="btn-visit">زيارة العمل</a>
+        </div>
+        <!-- 9 -->
+        <div class="news-card">
+            <div class="card-category">الصحة العامة</div>
+            <div class="icon-box">🚭</div>
+            <h2 class="card-title">خطر التدخين الإلكتروني</h2>
+            <p class="card-desc">مبادرة رقمية تسلط الضوء على أضرار التدخين الحديث.</p>
+            <a href="https://padlet.com/Alyarmouk/padlet-vxsd335reoyy49ae" target="_blank" class="btn-visit">زيارة العمل</a>
+        </div>
+        <!-- 10 -->
+        <div class="news-card">
+            <div class="card-category">بيئة تعليمية</div>
+            <div class="icon-box">🚫</div>
+            <h2 class="card-title">لا للتنمر</h2>
+            <p class="card-desc">مشروع يهدف لخلق بيئة مدرسية خالية من التنمر.</p>
+            <a href="https://padlet.com/Alyarmouk/padlet-7wbnwcjxy5648769" target="_blank" class="btn-visit">زيارة العمل</a>
+        </div>
+        <!-- 11 -->
+        <div class="news-card">
+            <div class="card-category">رؤية المستقبل</div>
+            <div class="icon-box">🏆</div>
+            <h2 class="card-title">كأس العالم 2034</h2>
+            <p class="card-desc">استعراض رقمي لملف استضافة المملكة لهذا الحدث العالمي.</p>
+            <a href="https://padlet.com/alyarmoukschool/padlet-y7k0368chnhip4vv" target="_blank" class="btn-visit">زيارة العمل</a>
+        </div>
+        <!-- 12 -->
+        <div class="news-card">
+            <div class="card-category">النزاهة</div>
+            <div class="icon-box">🤝</div>
+            <h2 class="card-title">مكافحة الفساد</h2>
+            <p class="card-desc">مبادرة تعزز قيم النزاهة والشفافية في المجتمع.</p>
+            <a href="https://alfale7.github.io/Corruption/" target="_blank" class="btn-visit">زيارة العمل</a>
+        </div>
+        <!-- 13 -->
+        <div class="news-card">
+            <div class="card-category">شؤون الطلاب</div>
+            <div class="icon-box">📝</div>
+            <h2 class="card-title">جدول الاختبارات</h2>
+            <p class="card-desc">تسهيل وصول الطلاب لجدول اختبارات منتصف الفصل الثاني.</p>
+            <a href="https://alfale7.github.io/Alyarmouk1/" target="_blank" class="btn-visit">زيارة العمل</a>
+        </div>
+    </div>
 
-    <!-- زر العودة للأعلى -->
-    <button onclick="topFunction()" id="backToTop" title="العودة للأعلى">↑</button>
+    <div class="swipe-hint">اسحب لليسار لتصفح الأعمال ↔️</div>
 
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 - الصرح الرقمي لثانوية اليرموك</p>
+        <p style="font-size: 0.8rem;">جميع الحقوق محفوظة &copy; 2026 - صرح اليرموك الرقمي</p>
     </footer>
-
-    <script>
-        let mybutton = document.getElementById("backToTop");
-
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-
-        function topFunction() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    </script>
 
 </body>
 </html>

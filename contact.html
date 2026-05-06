@@ -2,213 +2,187 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مدرسة اليرموك الثانوية - اتصل بنا</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>مركز التواصل - الصرح الرقمي</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a2a6c;
-            --accent-color: #b89535;
-            --bg-light: #f8f9fa;
-            --white: #ffffff;
-            --black-solid: #000000;
+            --primary-glow: #1e3a8a;
+            --accent-gold: #c5a059;
+            --bg-dark: #020617;
+            --glass: rgba(255, 255, 255, 0.03);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
 
         body {
-            background-color: var(--bg-light);
+            background-color: var(--bg-dark); 
+            background-image: radial-gradient(circle at 50% 20%, #1e40af, var(--bg-dark) 80%);
+            color: white;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* --- الهيدر (تم ضبط حجم الخط هنا ليتناسب مع باقي الصفحات) --- */
-        header {
-            background-color: var(--primary-color);
-            padding: 0.8rem 1.5rem; /* تقليل البادينج قليلاً */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 3px solid var(--accent-color);
-        }
+        /* هيدر ونافيجيشن موحد */
+        header { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(15px); padding: 1rem 1.5rem; border-bottom: 2px solid var(--accent-gold); z-index: 100; }
+        .header-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .school-logo { font-size: 1.1rem; font-weight: 700; color: var(--accent-gold); }
+        .ministry-logo img { height: 45px; filter: brightness(0) invert(1); }
+        nav { background: rgba(0,0,0,0.3); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        nav ul { display: flex; list-style: none; gap: 20px; justify-content: center; }
+        nav ul li a { text-decoration: none; color: white; font-size: 0.85rem; opacity: 0.7; }
+        nav ul li a.active { color: var(--accent-gold); font-weight: bold; opacity: 1; }
 
-        .header-content {
-            max-width: 1100px;
-            margin: 0 auto;
+        /* --- رادار التواصل الإبداعي --- */
+        .contact-orbit {
+            position: relative;
+            height: 250px;
             display: flex;
-            justify-content: space-between; 
+            justify-content: center;
             align-items: center;
+            margin-top: 20px;
         }
 
-        .school-logo {
-            /* تعديل الحجم ليكون 1.2rem بدلاً من 1.4rem ليتناسب مع الصورة المرفقة */
-            font-size: 1.2rem; 
-            font-weight: 700;
-            color: var(--accent-color);
+        .center-hub {
+            text-align: center;
+            z-index: 5;
+            background: var(--glass);
+            padding: 18px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 0 30px rgba(197, 160, 89, 0.2);
+            animation: pulse-gold 3s infinite;
+        }
+
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0px var(--accent-gold); }
+            50% { box-shadow: 0 0 25px var(--accent-gold); }
+            100% { box-shadow: 0 0 0px var(--accent-gold); }
+        }
+
+        .orbit-item {
+            position: absolute;
+            width: 65px;
+            height: 65px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            gap: 10px;
+            text-decoration: none;
+            transition: 0.4s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
-        .ministry-logo img {
-            height: 55px; /* ضبط الارتفاع ليتناسب مع الهيدر */
-            filter: brightness(0) invert(1);
-        }
+        .orbit-item:hover { transform: scale(1.15); border-color: var(--accent-gold); background: rgba(197, 160, 89, 0.1); }
 
-        nav {
-            background-color: var(--primary-color);
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
+        .item-1 { transform: translate(-90px, -60px); }
+        .item-2 { transform: translate(90px, -60px); }
+        .item-3 { transform: translate(-90px, 60px); }
+        .item-4 { transform: translate(90px, 60px); }
 
-        nav ul {
+        .orbit-item .icon { font-size: 1.4rem; }
+        .orbit-item .label { font-size: 0.6rem; color: var(--accent-gold); font-weight: bold; margin-top: 3px; }
+
+        /* --- إطار النموذج الثابت (بدون سكرول) --- */
+        .form-section {
+            padding: 0 15px 40px;
             display: flex;
-            list-style: none;
-            gap: 15px;
             justify-content: center;
         }
 
-        nav ul li a {
-            text-decoration: none;
-            color: var(--white);
-            font-size: 0.9rem; /* توحيد حجم خط الروابط */
-            transition: 0.3s;
-        }
-
-        nav ul li a.active { color: var(--accent-color); font-weight: bold; }
-
-        /* --- محتوى الصفحة --- */
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 15px;
-        }
-
-        .section-title {
-            color: var(--primary-color);
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-
-        .gold-line {
-            width: 60px;
-            height: 3px;
-            background: var(--accent-color);
-            margin: 0 auto 30px;
-        }
-
-        /* شريط الأيقونات بالبروز الذهبي السفلي */
-        .social-icons-bar {
-            background: var(--black-solid);
-            padding: 15px 45px;
-            border-radius: 50px;
-            display: flex;
-            gap: 35px;
-            align-items: center;
-            margin-bottom: 40px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            border-bottom: 4px solid var(--accent-color); 
-        }
-
-        .social-icons-bar a {
-            font-size: 2.2rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-        }
-
-        .youtube-logo {
-            width: 45px;
-            height: auto;
-        }
-
-        .social-icons-bar a:hover { transform: scale(1.2); }
-
-        .form-frame {
+        .form-glass-card {
             width: 100%;
-            max-width: 850px;
-            background: var(--white);
-            border-radius: 20px;
-            padding: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-bottom: 5px solid var(--accent-color); 
-            overflow: hidden;
+            max-width: 800px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 25px;
+            padding: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden; /* لمنع السكرول المزدوج */
+        }
+
+        .form-glass-card::before {
+            content: "ارسل رسالتك";
+            position: absolute;
+            top: -12px; right: 25px;
+            background: var(--accent-gold);
+            color: var(--primary-glow);
+            padding: 2px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            z-index: 10;
         }
 
         iframe {
             width: 100%;
-            height: 700px;
+            height: 850px; /* الارتفاع الكافي لعرض النموذج كاملاً */
+            border-radius: 18px;
             border: none;
-            border-radius: 12px;
+            background: white;
             display: block;
         }
 
-        footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 20px;
-            border-top: 3px solid var(--accent-color);
-            margin-top: 40px;
-        }
-
-        @media (max-width: 768px) {
-            .school-logo { font-size: 1.1rem; }
-            .social-icons-bar { gap: 20px; padding: 12px 30px; }
-            .social-icons-bar a { font-size: 1.8rem; }
-            .youtube-logo { width: 35px; }
-        }
+        footer { background: #020617; padding: 20px; text-align: center; border-top: 1px solid var(--accent-gold); }
     </style>
 </head>
 <body>
 
     <header>
         <div class="header-content">
-            <div class="school-logo">
-                🏛️ <span>مدرسة اليرموك الثانوية</span>
-            </div>
-            <div class="ministry-logo">
-                <img src="logo.png" alt="وزارة التعليم">
-            </div>
+            <div class="school-logo">🏛️ <span>مدرسة اليرموك الثانوية</span></div>
+            <div class="ministry-logo"><img src="logo.png" alt="وزارة التعليم"></div>
         </div>
     </header>
 
     <nav>
         <ul>
             <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="about.html">عن المدرسة</a></li>
-
-            <li><a href="works.html">أعمالنا الرقمية</a></li>
+            <li><a href="about.html">عن الصرح</a></li>
+            <li><a href="works.html">أعمالنا</a></li>
             <li><a href="contact.html" class="active">اتصل بنا</a></li>
         </ul>
     </nav>
 
-    <main class="main-content">
-        <h2 class="section-title">تواصل معنا</h2>
-        <div class="gold-line"></div>
+    <main>
+        <section class="contact-orbit">
+            <div class="center-hub">
+                <h2 style="font-size: 1.1rem;">مركز<br>التواصل</h2>
+            </div>
 
-        <div class="social-icons-bar">
-            <a href="https://maps.app.goo.gl/YFbrvq2e7AZ667y39?g_st=ic" target="_blank" title="موقع المدرسة">📍</a>
-            <a href="https://www.chatbase.co/chatbot-iframe/_gApu7rnjCHxPJVhTKlnR" target="_blank" title="المساعد الذكي">🤖</a>
-            <a href="https://youtube.com/@alyarmoukschool?si=N3nt3deJYeCfN8_C" target="_blank" title="قناة اليوتيوب">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" class="youtube-logo">
+            <a href="https://maps.app.goo.gl/YFbrvq2e7AZ667y39" target="_blank" class="orbit-item item-1">
+                <span class="icon">📍</span><span class="label">الموقع</span>
             </a>
-            <a href="mailto:842225@jb.moe.gov.sa" title="البريد الإلكتروني">📧</a>
-        </div>
+            <a href="https://www.chatbase.co/chatbot-iframe/_gApu7rnjCHxPJVhTKlnR" target="_blank" class="orbit-item item-2">
+                <span class="icon">🤖</span><span class="label">المساعد</span>
+            </a>
+            <a href="https://youtube.com/@alyarmoukschool" target="_blank" class="orbit-item item-3">
+                <span class="icon">🎬</span><span class="label">يوتيوب</span>
+            </a>
+            <a href="mailto:842225@jb.moe.gov.sa" class="orbit-item item-4">
+                <span class="icon">📧</span><span class="label">البريد</span>
+            </a>
+        </section>
 
-        <div class="form-frame">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd08wuMrzNQld3xMKTaMAtVU587_hrabzBr0qVDihIE7Mb4jA/viewform?embedded=true">
-                جاري التحميل...
-            </iframe>
-        </div>
+        <section class="form-section">
+            <div class="form-glass-card">
+                <!-- الارتفاع هنا يضمن ظهور كامل النموذج دون سكرول داخلي -->
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd08wuMrzNQld3xMKTaMAtVU587_hrabzBr0qVDihIE7Mb4jA/viewform?embedded=true">
+                    جاري التحميل...
+                </iframe>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 - الصرح الرقمي لثانوية اليرموك</p>
+        <p style="font-size: 0.7rem; color: #64748b;">جميع الحقوق محفوظة © 2026 - صرح اليرموك الرقمي</p>
     </footer>
 
 </body>
