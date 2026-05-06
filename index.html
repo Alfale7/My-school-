@@ -3,37 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مدرسة اليرموك الثانوية - الرئيسية</title>
-    <!-- استيراد خط Tajawal الفاخر -->
+    <meta name="description" content="الصرح الرقمي لثانوية اليرموك - منصة استعراض المبادرات والابتكارات الرقمية والتعليمية.">
+    <title>الصرح الرقمي - ثانوية اليرموك</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a2a6c; /* كحلي فاخر */
-            --accent-color: #b89535;  /* ذهبي هادئ */
+            --primary-color: #1a2a6c;
+            --accent-color: #b89535;
             --bg-light: #f8f9fa;
             --white: #ffffff;
-            --text-gray: #555;
+            --shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
 
-        body {
-            background-color: var(--bg-light);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+        body { background-color: var(--bg-light); display: flex; flex-direction: column; min-height: 100vh; }
 
-        /* --- الهيدر المطور مع الشعار المحلي --- */
+        /* الهيدر الموحد */
         header {
             background-color: var(--primary-color);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            padding: 1rem 1.5rem;
+            padding: 0.8rem 1.5rem;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -49,7 +38,7 @@
         }
 
         .school-logo {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--accent-color);
             display: flex;
@@ -57,16 +46,12 @@
             gap: 10px;
         }
 
-        /* تنسيق الشعار المعتمد على ملف logo.png */
         .ministry-logo img {
-            height: 60px; /* حجم مثالي للشعار */
-            width: auto;
-            display: block;
-            /* ملاحظة: إذا كان شعارك ملوناً وتريد بقاء ألوانه، احذف سطر filter أدناه */
-            filter: brightness(0) invert(1); 
+            height: 55px;
+            filter: brightness(0) invert(1);
         }
 
-        /* --- شريط التنقل --- */
+        /* شريط التنقل المحدث */
         nav {
             background-color: var(--primary-color);
             padding: 10px 0;
@@ -76,108 +61,109 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 15px;
-            flex-wrap: wrap;
+            gap: 20px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         nav ul li a {
             text-decoration: none;
             color: var(--white);
             font-size: 0.95rem;
-            padding: 4px 8px;
-            font-weight: 500;
             transition: 0.3s;
         }
 
-        nav ul li a.active, nav ul li a:hover {
-            color: var(--accent-color);
-        }
+        nav ul li a.active, nav ul li a:hover { color: var(--accent-color); font-weight: bold; }
 
-        /* --- قسم المحتوى الرئيسي --- */
-        .main-section {
-            padding: 60px 20px;
+        /* واجهة الصرح */
+        .hero {
+            padding: 60px 20px 30px;
             text-align: center;
-            flex: 1;
+            background: linear-gradient(180deg, rgba(26,42,108,0.05) 0%, rgba(248,249,250,1) 100%);
         }
 
-        .section-header h2 {
-            color: var(--primary-color);
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
+        .hero h1 { font-size: 2.8rem; color: var(--primary-color); margin-bottom: 15px; }
 
-        .underline {
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent-color);
+        .hero p { font-size: 1.15rem; color: #555; max-width: 750px; margin: 0 auto 30px; line-height: 1.8; }
+
+        /* قسم الإحصائيات مع العداد الحي */
+        .stats-container {
+            max-width: 950px;
             margin: 0 auto 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 0 20px;
         }
 
-        /* --- بطاقات المميزات --- */
-        .cards-container {
+        .stat-card {
+            background: var(--white);
+            padding: 25px 15px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent-color);
+            transition: all 0.3s ease;
+            text-align: center;
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            max-width: 500px;
-            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
         }
 
-        .info-card {
-            background: var(--white);
-            padding: 30px 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-bottom: 4px solid var(--accent-color);
-            transition: transform 0.3s ease;
-        }
+        .stat-card:hover { transform: translateY(-8px); }
 
-        .info-card h3 {
+        .stat-number {
+            display: block;
+            font-size: 2.2rem;
+            font-weight: 700;
             color: var(--primary-color);
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
         }
 
-        .info-card p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            line-height: 1.7;
+        .stat-label { font-size: 1rem; color: #666; font-weight: 500; }
+
+        /* تنسيق صورة العداد الحي */
+        .live-counter-img {
+            margin-bottom: 10px;
+            height: 35px;
         }
 
-        /* --- قسم المساعد الافتراضي --- */
-        .bot-section {
-            padding: 60px 20px;
-            background-color: #f1f3f7;
-            text-align: center;
+        .click-hint {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--accent-color);
+            margin-top: 8px;
+            font-weight: bold;
         }
 
-        .bot-frame {
-            max-width: 850px;
-            margin: 0 auto;
-            background: var(--white);
-            border-radius: 20px;
-            padding: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-bottom: 5px solid var(--accent-color);
-            overflow: hidden;
+        .btn-container { text-align: center; margin-bottom: 60px; }
+
+        .btn-start {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            border-bottom: 4px solid var(--accent-color);
+            display: inline-block;
         }
 
-        /* --- الفوتر --- */
+        .btn-start:hover { background-color: #243b91; transform: scale(1.05); }
+
         footer {
             background-color: var(--primary-color);
             color: var(--white);
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             border-top: 3px solid var(--accent-color);
-            margin-top: 40px;
         }
 
-        /* استجابة الجوال */
         @media (max-width: 768px) {
-            .header-content { flex-direction: row; justify-content: space-between; }
-            .section-header h2 { font-size: 1.8rem; }
-            .school-logo { font-size: 1.1rem; }
-            .ministry-logo img { height: 45px; }
+            .stats-container { grid-template-columns: 1fr; gap: 15px; }
+            .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -188,9 +174,7 @@
             <div class="school-logo">
                 🏛️ <span>مدرسة اليرموك الثانوية</span>
             </div>
-            
             <div class="ministry-logo">
-                <!-- تم تغيير المصدر إلى ملف محلي باسم logo.png -->
                 <img src="logo.png" alt="وزارة التعليم">
             </div>
         </div>
@@ -199,54 +183,44 @@
     <nav>
         <ul>
             <li><a href="index.html" class="active">الرئيسية</a></li>
-            <li><a href="about.html">عن المدرسة</a></li>
-
+            <li><a href="about.html">عن الصرح</a></li>
             <li><a href="works.html">أعمالنا الرقمية</a></li>
             <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
     </nav>
 
-    <main class="main-section">
-        <div class="section-header">
-            <h2>لماذا اليرموك الثانوية؟</h2>
-            <div class="underline"></div>
-        </div>
+    <main>
+        <section class="hero">
+            <h1>الصرح الرقمي</h1>
+            <p>المنصة الرسمية لاستعراض المبادرات والابتكارات الرقمية لمنسوبي وطلاب ثانوية اليرموك، نحو تعليم رقمي متميز يواكب رؤية المملكة 2030.</p>
+        </section>
 
-        <div class="cards-container">
-            <div class="info-card">
-                <h3>بيئة تعليمية متطورة</h3>
-                <p>نستخدم أحدث التقنيات والوسائل التعليمية لضمان وصول المعلومة بسلاسة لطلابنا.</p>
+        <section class="stats-container">
+            <div class="stat-card">
+                <span class="stat-number">+15</span>
+                <span class="stat-label">عمل رقمي</span>
             </div>
 
-            <div class="info-card">
-                <h3>كادر تعليمي متميز</h3>
-                <p>نخبة من المعلمين ذوي الخبرة والكفاءة العالية الملتزمين بتطوير قدرات الطلاب.</p>
+            <!-- بطاقة الزوار بالعداد الحي -->
+            <div class="stat-card">
+                <img class="live-counter-img" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Falfale7.github.io%2FNaaif%2F&count_bg=%231A2A6C&title_bg=%23B89535&icon=&icon_color=%23E7E7E7&title=%D8%A7%D9%84%D8%B2%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA&edge_flat=false" alt="Live Counter">
+                <span class="stat-label">مستفيد من الصرح</span>
+                <span class="click-hint">تحديث تلقائي مباشر 📈</span>
             </div>
 
-            <div class="info-card">
-                <h3>بناء الشخصية</h3>
-                <p>نركز على الجوانب التربوية والقيادية لتهيئة الطلاب للمرحلة الجامعية والحياة العملية.</p>
+            <div class="stat-card">
+                <span class="stat-number">2026</span>
+                <span class="stat-label">عام الإطلاق</span>
             </div>
+        </section>
+
+        <div class="btn-container">
+            <a href="works.html" class="btn-start">تصفح معرض الأعمال الرقمية</a>
         </div>
     </main>
 
-    <section class="bot-section">
-        <div class="section-header">
-            <h2>المساعد الافتراضي</h2>
-            <div class="underline" style="margin-bottom: 30px;"></div>
-        </div>
-        <div class="bot-frame">
-            <iframe
-                src="https://www.chatbase.co/chatbot-iframe/_gApu7rnjCHxPJVhTKlnR"
-                width="100%"
-                style="height: 550px; border: none; border-radius: 12px;"
-                frameborder="0"
-            ></iframe>
-        </div>
-    </section>
-
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 - مدرسة اليرموك الثانوية</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 - الصرح الرقمي لثانوية اليرموك</p>
     </footer>
 
 </body>
