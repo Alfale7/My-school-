@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="الصرح الرقمي لثانوية اليرموك - منصة استعراض المبادرات والابتكارات الرقمية لمنسوبي وطلاب المدرسة.">
+    
+    <!-- إعدادات المعاينة للواتساب والشبكات الاجتماعية -->
+    <meta property="og:title" content="الصرح الرقمي - ثانوية اليرموك">
+    <meta property="og:description" content="المنصة الرسمية لاستعراض المبادرات والابتكارات الرقمية والتعليمية.">
+    <!-- تأكد من تسمية الصورة thumb.png ورفعها بجانب ملف index.html -->
+    <meta property="og:image" content="https://alfale7.github.io/Naaif/thumb.png">
+    <meta property="og:url" content="https://alfale7.github.io/Naaif/">
+    <meta property="og:type" content="website">
+
     <title>الصرح الرقمي - ثانوية اليرموك</title>
-    <!-- استيراد خط Tajawal -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -18,9 +25,8 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
 
-        body { background-color: var(--bg-light); display: flex; flex-direction: column; min-height: 100vh; line-height: 1.6; }
+        body { background-color: var(--bg-light); display: flex; flex-direction: column; min-height: 100vh; }
 
-        /* الهيدر الموحد */
         header {
             background-color: var(--primary-color);
             padding: 1rem 1.5rem;
@@ -31,165 +37,74 @@
         }
 
         .header-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between; 
-            align-items: center;
+            max-width: 1100px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
         }
 
         .school-logo {
-            font-size: 1.2rem; /* الحجم المعتمد لجميع الصفحات */
-            font-weight: 700;
-            color: var(--accent-color);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-size: 1.2rem; font-weight: 700; color: var(--accent-color);
+            display: flex; align-items: center; gap: 10px;
         }
 
-        .ministry-logo img {
-            height: 60px;
-            filter: brightness(0) invert(1);
-        }
+        .ministry-logo img { height: 60px; filter: brightness(0) invert(1); }
 
-        /* شريط التنقل */
-        nav {
-            background-color: var(--primary-color);
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
+        nav { background-color: var(--primary-color); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+        nav ul { display: flex; list-style: none; gap: 25px; justify-content: center; flex-wrap: wrap; }
 
-        nav ul li a {
-            text-decoration: none;
-            color: var(--white);
-            font-size: 0.95rem;
-            transition: 0.3s;
-        }
+        nav ul li a { text-decoration: none; color: var(--white); font-size: 0.95rem; transition: 0.3s; }
 
         nav ul li a:hover, nav ul li a.active { color: var(--accent-color); font-weight: bold; }
 
-        /* واجهة البطل */
-        .hero {
-            padding: 70px 20px 40px;
-            text-align: center;
-        }
+        .hero { padding: 70px 20px 40px; text-align: center; }
 
-        .hero h1 { 
-            font-size: 2.5rem; 
-            color: var(--primary-color); 
-            margin-bottom: 15px;
-        }
+        .hero h1 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
 
-        .hero p { 
-            font-size: 1.1rem; 
-            color: #444; 
-            max-width: 800px; 
-            margin: 0 auto 30px;
-        }
+        .hero p { font-size: 1.1rem; color: #444; max-width: 800px; margin: 0 auto 30px; }
 
-        /* قسم الإحصائيات المحدث - حل مشكلة الصورة */
         .stats-container {
-            max-width: 1000px;
-            margin: 0 auto 50px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            padding: 0 20px;
+            max-width: 1000px; margin: 0 auto 50px;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; padding: 0 20px;
         }
 
         .stat-card {
-            background: var(--white);
-            padding: 35px 20px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            border-top: 5px solid var(--accent-color);
-            text-align: center;
-            transition: transform 0.3s ease;
-            text-decoration: none; /* لإزالة خط الرابط */
-            display: block;
+            background: var(--white); padding: 35px 20px; border-radius: 15px;
+            box-shadow: var(--shadow); border-top: 5px solid var(--accent-color);
+            text-align: center; transition: transform 0.3s ease; text-decoration: none; display: block;
         }
 
-        .stat-card:hover { 
-            transform: translateY(-10px); 
-            border-top-color: var(--primary-color);
-        }
+        .stat-card:hover { transform: translateY(-10px); border-top-color: var(--primary-color); }
 
-        .stat-number {
-            display: block;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
+        .stat-number { display: block; font-size: 2.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 5px; }
 
-        .stat-label {
-            font-size: 1rem;
-            color: #666;
-            font-weight: 500;
-        }
+        .stat-label { font-size: 1rem; color: #666; font-weight: 500; }
 
-        .hint-text {
-            display: block;
-            font-size: 0.75rem;
-            color: var(--accent-color);
-            margin-top: 10px;
-            font-weight: bold;
-        }
+        .hint-text { display: block; font-size: 0.75rem; color: var(--accent-color); margin-top: 10px; font-weight: bold; }
 
-        /* زر المعرض */
         .btn-container { text-align: center; margin-bottom: 80px; }
 
         .btn-works {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 16px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            border-bottom: 5px solid var(--accent-color);
-            transition: 0.3s;
-            display: inline-block;
+            background-color: var(--primary-color); color: var(--white); padding: 16px 40px;
+            border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.2rem;
+            border-bottom: 5px solid var(--accent-color); transition: 0.3s; display: inline-block;
         }
 
         .btn-works:hover { transform: scale(1.05); background-color: #243b91; }
 
-        /* الفوتر */
         footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 30px;
-            margin-top: auto;
-            border-top: 4px solid var(--accent-color);
+            background-color: var(--primary-color); color: var(--white); text-align: center;
+            padding: 30px; margin-top: auto; border-top: 4px solid var(--accent-color);
         }
 
-        /* التوافق مع الجوال */
-        @media (max-width: 768px) {
-            .stats-container { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2rem; }
-        }
+        @media (max-width: 768px) { .stats-container { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } }
     </style>
 </head>
 <body>
 
     <header>
         <div class="header-content">
-            <div class="school-logo">
-                🏛️ <span>مدرسة اليرموك الثانوية</span>
-            </div>
-            <div class="ministry-logo">
-                <!-- تأكد من وجود ملف logo.png في مستودعك -->
-                <img src="logo.png" alt="وزارة التعليم">
-            </div>
+            <div class="school-logo">🏛️ <span>مدرسة اليرموك الثانوية</span></div>
+            <div class="ministry-logo"><img src="logo.png" alt="وزارة التعليم"></div>
         </div>
     </header>
 
@@ -209,20 +124,17 @@
         </section>
 
         <section class="stats-container">
-            <!-- البطاقة 1 -->
             <div class="stat-card">
                 <span class="stat-number">15+</span>
                 <span class="stat-label">عمل رقمي</span>
             </div>
 
-            <!-- البطاقة 2 (المحدثة بدون أخطاء صور) -->
             <a href="https://www.freecounterstat.com" target="_blank" class="stat-card">
                 <span class="stat-number">500+</span>
                 <span class="stat-label">مستفيد من الصرح</span>
                 <span class="hint-text">تحديث تلقائي مباشر 📈</span>
             </a>
 
-            <!-- البطاقة 3 -->
             <div class="stat-card">
                 <span class="stat-number">2026</span>
                 <span class="stat-label">عام الإطلاق</span>
