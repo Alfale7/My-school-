@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>مركز التواصل - الصرح الرقمي</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-glow: #1e3a8a;
@@ -25,17 +26,16 @@
             overflow-x: hidden;
         }
 
-        /* هيدر ونافيجيشن موحد */
         header { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(15px); padding: 1rem 1.5rem; border-bottom: 2px solid var(--accent-gold); z-index: 100; }
         .header-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
         .school-logo { font-size: 1.1rem; font-weight: 700; color: var(--accent-gold); }
         .ministry-logo img { height: 45px; filter: brightness(0) invert(1); }
+        
         nav { background: rgba(0,0,0,0.3); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
         nav ul { display: flex; list-style: none; gap: 20px; justify-content: center; }
         nav ul li a { text-decoration: none; color: white; font-size: 0.85rem; opacity: 0.7; }
         nav ul li a.active { color: var(--accent-gold); font-weight: bold; opacity: 1; }
 
-        /* --- رادار التواصل الإبداعي --- */
         .contact-orbit {
             position: relative;
             height: 250px;
@@ -80,32 +80,24 @@
         }
 
         .orbit-item:hover { transform: scale(1.15); border-color: var(--accent-gold); background: rgba(197, 160, 89, 0.1); }
-
         .item-1 { transform: translate(-90px, -60px); }
         .item-2 { transform: translate(90px, -60px); }
         .item-3 { transform: translate(-90px, 60px); }
         .item-4 { transform: translate(90px, 60px); }
-
         .orbit-item .icon { font-size: 1.4rem; }
         .orbit-item .label { font-size: 0.6rem; color: var(--accent-gold); font-weight: bold; margin-top: 3px; }
 
-        /* --- إطار النموذج الثابت (بدون سكرول) --- */
-        .form-section {
-            padding: 0 15px 40px;
-            display: flex;
-            justify-content: center;
-        }
-
+        /* --- تصميم فورم Formspree الجديد --- */
+        .form-section { padding: 0 15px 40px; display: flex; justify-content: center; }
         .form-glass-card {
             width: 100%;
-            max-width: 800px;
-            background: rgba(255,255,255,0.02);
+            max-width: 600px;
+            background: rgba(255,255,255,0.03);
             border-radius: 25px;
-            padding: 10px;
+            padding: 30px;
             border: 1px solid rgba(255,255,255,0.1);
             box-shadow: 0 25px 50px rgba(0,0,0,0.5);
             position: relative;
-            overflow: hidden; /* لمنع السكرول المزدوج */
         }
 
         .form-glass-card::before {
@@ -113,7 +105,7 @@
             position: absolute;
             top: -12px; right: 25px;
             background: var(--accent-gold);
-            color: var(--primary-glow);
+            color: #020617;
             padding: 2px 12px;
             border-radius: 8px;
             font-size: 0.75rem;
@@ -121,16 +113,39 @@
             z-index: 10;
         }
 
-        iframe {
+        .form-group { margin-bottom: 15px; text-align: right; }
+        label { display: block; color: var(--accent-gold); font-size: 0.85rem; margin-bottom: 5px; font-weight: bold; }
+        
+        input, textarea {
             width: 100%;
-            height: 850px; /* الارتفاع الكافي لعرض النموذج كاملاً */
-            border-radius: 18px;
-            border: none;
-            background: white;
-            display: block;
+            padding: 12px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: white;
+            font-size: 0.9rem;
+            outline: none;
+            transition: 0.3s;
         }
 
-        footer { background: #020617; padding: 20px; text-align: center; border-top: 1px solid var(--accent-gold); }
+        input:focus, textarea:focus { border-color: var(--accent-gold); background: rgba(197, 160, 89, 0.05); }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--accent-gold);
+            color: #020617;
+            border: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover { background: #e2b86a; transform: translateY(-2px); }
+
+        footer { background: #020617; padding: 20px; text-align: center; border-top: 1px solid var(--accent-gold); margin-top: auto; }
     </style>
 </head>
 <body>
@@ -156,7 +171,6 @@
             <div class="center-hub">
                 <h2 style="font-size: 1.1rem;">مركز<br>التواصل</h2>
             </div>
-
             <a href="https://maps.app.goo.gl/YFbrvq2e7AZ667y39" target="_blank" class="orbit-item item-1">
                 <span class="icon">📍</span><span class="label">الموقع</span>
             </a>
@@ -173,10 +187,21 @@
 
         <section class="form-section">
             <div class="form-glass-card">
-                <!-- الارتفاع هنا يضمن ظهور كامل النموذج دون سكرول داخلي -->
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd08wuMrzNQld3xMKTaMAtVU587_hrabzBr0qVDihIE7Mb4jA/viewform?embedded=true">
-                    جاري التحميل...
-                </iframe>
+                <form action="https://formspree.io/f/xqenlvyb" method="POST">
+                    <div class="form-group">
+                        <label>الاسم الكامل</label>
+                        <input type="text" name="name" placeholder="أدخل اسمك الكريم" required>
+                    </div>
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" name="email" placeholder="example@mail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>الرسالة</label>
+                        <textarea name="message" rows="5" placeholder="اكتب استفسارك أو مقترحك هنا..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">إرسال الرسالة</button>
+                </form>
             </div>
         </section>
     </main>
