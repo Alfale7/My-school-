@@ -1,212 +1,358 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TGL6YLEPTK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-TGL6YLEPTK');
-    </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TGL6YLEPTK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TGL6YLEPTK');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta property="og:title" content="الصرح الرقمي — اليرموك الثانوية">
+<meta property="og:image" content="https://alfale7.github.io/My-school-/thumb.png">
+<title>الصرح الرقمي — اليرموك الثانوية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --g:#c8973a;--g2:#e8c46a;--g3:#f5d98a;
+  --ink:#030509;
+  --r:20px;--rm:14px;
+  --f:'Readex Pro',sans-serif;
+}
+html{height:100%;scroll-behavior:smooth}
+body{
+  font-family:var(--f);
+  color:#fff;min-height:100dvh;
+  display:flex;flex-direction:column;
+  overflow-x:hidden;
+  background:#030509;
+  background-image:
+    radial-gradient(ellipse 140% 55% at 50% -8%, #0f3460 0%, transparent 65%),
+    radial-gradient(ellipse 70% 50% at 95% 30%, rgba(15,52,96,.45) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 42% at 5% 78%, rgba(40,10,80,.32) 0%, transparent 55%);
+}
+#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:2;display:flex;flex-direction:column;min-height:100dvh}
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+/* HEADER */
+header{
+position:sticky;top:0;z-index:50;
+padding:12px 18px;
+display:flex;justify-content:space-between;align-items:center;
+background:rgba(3,5,9,.82);
+backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+border-bottom:1px solid rgba(200,151,58,.2);
+animation:hdrIn .8s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes hdrIn{from{transform:translateY(-70px);opacity:0}to{transform:translateY(0);opacity:1}}
+.hbrand{display:flex;align-items:center;gap:9px}
+.hicon{
+width:36px;height:36px;border-radius:10px;
+background:linear-gradient(135deg,#c8973a,#e8c46a);
+display:grid;place-items:center;font-size:1rem;
+box-shadow:0 0 18px rgba(200,151,58,.5);flex-shrink:0;
+}
+.hname{font-size:.8rem;font-weight:600;line-height:1.15;color:#fff}
+.hsub{font-size:.62rem;color:#c8973a;font-weight:300}
+.hlogo img{height:32px;filter:brightness(0) invert(1);opacity:.8}
+.hpill{
+display:flex;align-items:center;gap:5px;
+background:rgba(200,151,58,.08);border:1px solid rgba(200,151,58,.22);
+border-radius:50px;padding:4px 11px;
+font-size:.6rem;color:#e8c46a;font-weight:500;
+}
+.hdot{width:6px;height:6px;background:#4ade80;border-radius:50%;animation:blink 1.4s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.25;transform:scale(.5)}}
 
-    <meta property="og:title" content="الصرح الرقمي - اليرموك الثانوية">
-    <meta property="og:description" content="استعرض المبادرات والابتكارات الرقمية والتعليمية لطلاب ومنسوبي ثانوية اليرموك.">
-    <meta property="og:image" content="https://alfale7.github.io/My-school-/thumb.png">
-    <meta property="og:url" content="https://alfale7.github.io/My-school-/works.html">
-    <meta property="og:type" content="website">
-    
-    <title>الصرح الرقمي - اليرموك الثانوية   </title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-glow: #1e3a8a; /* كحلي حي ومشرق */
-            --accent-gold: #c5a059;  /* ذهبي ملكي فاتح */
-            --bg-dark: #020617;     /* خلفية عميقة وأنيقة */
-            --card-light: #f8fafc;  /* أبيض مريح للعين */
-        }
+/* HERO */
+.hero{
+display:flex;flex-direction:column;
+justify-content:center;align-items:center;
+padding:28px 24px 60px;text-align:center;
+position:relative;
+height:calc(100dvh - 60px);
+overflow:hidden;
+}
+.hero-bg-word{
+position:absolute;top:50%;left:50%;
+transform:translate(-50%,-54%);
+font-size:clamp(5rem,26vw,12rem);
+font-weight:700;
+color:rgba(200,151,58,.04);
+pointer-events:none;user-select:none;
+white-space:nowrap;line-height:1;
+}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
+/* CHIP */
+.chip{
+display:inline-flex;align-items:center;gap:7px;
+background:rgba(200,151,58,.07);
+border:1px solid rgba(200,151,58,.25);
+border-radius:50px;padding:6px 18px;
+font-size:.65rem;font-weight:400;color:#e8c46a;
+letter-spacing:.06em;margin-bottom:16px;
+animation:up .8s cubic-bezier(.16,1,.3,1) .2s both;
+}
+.chip::before{content:’’;width:5px;height:5px;background:#c8973a;border-radius:50%}
 
-        body {
-            background-color: var(--bg-dark);
-            background-image: radial-gradient(circle at 50% -20%, #2563eb, transparent 60%),
-                              radial-gradient(circle at 10% 90%, #1e3a8a, transparent 40%);
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            color: white;
-            overflow: hidden;
-        }
+/* TITLE */
+h1.htitle{
+margin-bottom:8px;
+animation:up .9s cubic-bezier(.16,1,.3,1) .35s both;
+line-height:1.1;
+}
+/* “صرح” + “الرقمي” — وزن متوسط، حجم طبيعي */
+.htitle .t-normal{
+display:block;
+font-size:clamp(1.2rem,4.5vw,1.8rem);
+font-weight:500;
+color:rgba(255,255,255,.9);
+letter-spacing:.02em;
+}
+/* “اليرموك” — الكلمة البطلة، ذهبية، أكبر لكن لا تفقد التوازن */
+.htitle .t-hero{
+display:block;
+font-size:clamp(2rem,7.5vw,3.2rem);
+font-weight:700;
+color:#e8c46a;
+letter-spacing:-.01em;
+line-height:1.05;
+text-shadow:
+0 0 28px rgba(232,196,106,.4),
+0 0 60px rgba(200,151,58,.15);
+animation:goldGlow 4s ease-in-out infinite alternate;
+}
+@keyframes goldGlow{
+from{text-shadow:0 0 22px rgba(232,196,106,.35),0 0 50px rgba(200,151,58,.1)}
+to  {text-shadow:0 0 42px rgba(245,217,138,.6),0 0 90px rgba(200,151,58,.22)}
+}
 
-        /* هيدر عصري ومشرق */
-        header {
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(15px);
-            border-bottom: 2px solid var(--accent-gold);
-        }
+/* SUB */
+.hsub{
+font-size:.78rem;font-weight:300;
+color:rgba(255,255,255,.46);line-height:1.6;
+max-width:290px;margin:10px auto 18px;
+animation:up .9s cubic-bezier(.16,1,.3,1) .5s both;
+}
 
-        .logo-area { display: flex; align-items: center; gap: 10px; color: var(--accent-gold); font-weight: bold; }
-        .logo-area img { height: 45px; filter: brightness(0) invert(1); }
+/* BUTTONS */
+.hbtns{
+display:flex;flex-direction:column;gap:9px;
+width:100%;max-width:270px;
+animation:up .9s cubic-bezier(.16,1,.3,1) .65s both;
+}
+.btn-prim{
+display:flex;align-items:center;justify-content:center;gap:10px;
+padding:12px 20px;border-radius:14px;
+font-family:var(–f);font-weight:600;font-size:.88rem;
+text-decoration:none;border:none;cursor:pointer;
+position:relative;overflow:hidden;
+background:linear-gradient(135deg,#c8973a 0%,#e8c46a 60%,#f0d070 100%);
+color:#1a0d00;-webkit-text-fill-color:#1a0d00;
+box-shadow:0 4px 24px rgba(200,151,58,.45);
+transition:transform .18s cubic-bezier(.34,1.56,.64,1);
+}
+.btn-prim::after{
+content:’’;position:absolute;top:0;left:-130%;width:55%;height:100%;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+animation:shim 3.5s ease-in-out infinite;
+}
+@keyframes shim{from{left:-130%}to{left:160%}}
+.btn-prim:active{transform:scale(.93)}
+.btn-ghost{
+display:flex;align-items:center;justify-content:center;gap:10px;
+padding:12px 20px;border-radius:14px;
+font-family:var(–f);font-weight:400;font-size:.85rem;
+text-decoration:none;border:1px solid rgba(255,255,255,.12);cursor:pointer;
+background:rgba(255,255,255,.04);
+color:#fff;-webkit-text-fill-color:#fff;
+transition:transform .18s cubic-bezier(.34,1.56,.64,1);
+}
+.btn-ghost:active{transform:scale(.93)}
 
-        /* لوحة التحكم التفاعلية */
-        .dashboard {
-            flex: 1;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            justify-content: center;
-        }
+/* SCROLL CUE */
 
-        /* كرت الترحيب الفاخر */
-        .welcome-card {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(37, 99, 235, 0.7));
-            padding: 25px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.1);
-            position: relative;
-            overflow: hidden;
-        }
+70%{transform:translateY(8px);opacity:.2}}
 
-        .welcome-card::after {
-            content: "🏛️";
-            position: absolute;
-            top: -10px; left: -10px;
-            font-size: 5rem;
-            opacity: 0.1;
-        }
+/* STATS */
+.section{padding:0 18px 22px}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.scard{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.065);border-radius:20px;padding:18px 12px;text-align:center;position:relative;overflow:hidden}
+.scard::before{content:’’;position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#c8973a,#e8c46a)}
+.scard-ico{font-size:1.5rem;margin-bottom:5px}
+.scard-val{display:block;font-size:2rem;font-weight:700;line-height:1;margin-bottom:3px;color:#e8c46a}
+.scard-lbl{font-size:.67rem;color:rgba(255,255,255,.42);font-weight:300}
 
-        .welcome-card h1 { font-size: 1.8rem; margin-bottom: 8px; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-        .welcome-card p { font-size: 0.9rem; color: #e2e8f0; line-height: 1.5; }
+/* WORKS */
+.row-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.row-ttl{font-size:.72rem;font-weight:500;color:#c8973a;letter-spacing:.08em}
+.row-lnk{font-size:.66rem;color:rgba(255,255,255,.36);text-decoration:none;font-weight:300}
+.wscroll{display:flex;gap:11px;overflow-x:auto;padding-bottom:4px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.wscroll::-webkit-scrollbar{display:none}
+.wchip{
+flex-shrink:0;scroll-snap-align:center;
+background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+border-radius:14px;padding:13px 14px;min-width:126px;
+display:flex;flex-direction:column;gap:6px;
+text-decoration:none;color:#fff;
+transition:transform .18s cubic-bezier(.34,1.56,.64,1);
+}
+.wchip:active{transform:scale(.93)}
+.wt{font-size:.54rem;font-weight:500;color:#c8973a;letter-spacing:.06em}
+.wi{font-size:1.4rem}
+.wn{font-size:.73rem;font-weight:400;line-height:1.3;color:rgba(255,255,255,.88)}
 
-        /* منطقة الإحصائيات المضيئة */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
+/* HIGHLIGHT */
+.hcard{
+margin:0 18px 22px;
+background:rgba(200,151,58,.07);border:1px solid rgba(200,151,58,.2);
+border-radius:20px;padding:18px;
+display:flex;gap:14px;align-items:center;
+text-decoration:none;
+transition:transform .18s cubic-bezier(.34,1.56,.64,1);
+}
+.hcard:active{transform:scale(.97)}
+.hc-ico{font-size:2rem;flex-shrink:0;animation:flt 3s ease-in-out infinite}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.hc-ttl{font-size:.87rem;font-weight:600;color:#e8c46a;margin-bottom:3px}
+.hc-sub{font-size:.68rem;color:rgba(255,255,255,.4);line-height:1.5;font-weight:300}
+.hc-arr{margin-right:auto;color:#c8973a;font-size:.9rem;flex-shrink:0}
 
-        .stat-item {
-            background: var(--card-light);
-            padding: 25px 15px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            border-top: 5px solid var(--accent-gold);
-        }
+/* NAV */
+nav.bot{
+position:sticky;bottom:0;z-index:50;
+background:rgba(3,5,9,.93);
+backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
+border-top:1px solid rgba(255,255,255,.055);
+display:flex;justify-content:space-around;
+padding:9px 6px max(12px,env(safe-area-inset-bottom));
+}
+.ni{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;padding:6px 14px;border-radius:12px;transition:background .18s;position:relative}
+.ni.active{background:rgba(200,151,58,.09)}
+.ni.active::after{content:’’;position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);width:18px;height:2px;background:#c8973a;border-radius:2px}
+.ni-ico{font-size:1.15rem;transition:transform .18s cubic-bezier(.34,1.56,.64,1)}
+.ni:active .ni-ico{transform:scale(.78)}
+.ni-lbl{font-size:.57rem;color:rgba(255,255,255,.3);font-weight:400}
+.ni.active .ni-lbl{color:#c8973a}
 
-        .stat-item .value { font-size: 2.2rem; font-weight: 800; color: var(--primary-glow); display: block; }
-        .stat-item .label { font-size: 0.85rem; color: #64748b; font-weight: bold; }
+footer{background:#030509;border-top:1px solid rgba(200,151,58,.15);padding:14px 18px 10px;text-align:center}
+.fc{font-size:.65rem;color:rgba(255,255,255,.55);font-weight:400}
+.fc strong{color:#e8c46a;font-weight:600}
+.ctrw{transform:scale(.65);transform-origin:center;margin:4px auto 0;opacity:.55}
 
-        /* الزر التفاعلي المضيء */
-        .cta-button {
-            background: linear-gradient(90deg, #b89535, #d4af37);
-            color: #1a2a6c;
-            padding: 18px;
-            border-radius: 15px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            box-shadow: 0 5px 20px rgba(184, 149, 53, 0.4);
-            transition: 0.3s;
-        }
+@keyframes up{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}
+</style>
 
-        .cta-button:active { transform: scale(0.95); }
-
-        /* شريط التنقل السفلي */
-        .nav-bar {
-            display: flex;
-            justify-content: space-around;
-            padding: 15px;
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: #94a3b8;
-            font-size: 0.75rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .nav-link.active { color: var(--accent-gold); }
-        .nav-link span { font-size: 1.3rem; }
-
-        footer {
-            background: #020617;
-            padding-bottom: 10px;
-            text-align: center;
-        }
-
-        .counter-container { transform: scale(0.7); margin: 5px auto; }
-    </style>
 </head>
 <body>
+<canvas id="bgCanvas"></canvas>
+<div class="wrap">
 
-    <header>
-        <div class="logo-area">🏛️ <span>مدرسة اليرموك الثانوية</span></div>
-        <div class="logo-area"><img src="logo.png" alt="وزارة التعليم"></div>
-    </header>
+<header>
+  <div class="hbrand">
+    <div class="hicon">🏛</div>
+    <div><div class="hname">اليرموك الثانوية</div><div class="hsub">الصرح الرقمي</div></div>
+  </div>
+  <div class="hpill"><div class="hdot"></div>مباشر</div>
+  <div class="hlogo"><img src="logo.png" alt="وزارة التعليم"></div>
+</header>
 
-    <main class="dashboard">
-        <!-- الترحيب -->
-        <div class="welcome-card">
-            <h1>صرح اليرموك الرقمي</h1>
-            <p>مرحباً بك في المنصة الرسمية للابتكارات التعليمية والتقنية بمدرسة اليرموك</p>
-        </div>
+<section class="hero">
+  <div class="hero-bg-word" aria-hidden="true">يرموك</div>
+  <div class="chip">✦ المنصة الرسمية للابتكار التعليمي</div>
+  <h1 class="htitle">
+    <span class="t-normal">صرح</span>
+    <span class="t-hero">اليرموك</span>
+    <span class="t-normal">الرقمي</span>
+  </h1>
+  <p class="hsub">حيث يلتقي الإبداع بالتقنية — مبادرات ومشاريع ثانوية اليرموك بمعايير عالمية</p>
+  <div class="hbtns">
+    <a href="works.html" class="btn-prim">🚀 &nbsp;استعرض معرض الأعمال</a>
+    <a href="about.html" class="btn-ghost">✦ &nbsp;تعرّف على الصرح</a>
+  </div>
+</div>
+</section>
 
-        <!-- الإحصائيات -->
-        <div class="stats-grid">
-            <div class="stat-item">
-                <span class="value">+15</span>
-                <span class="label">مشروع رقمي</span>
-            </div>
-            <div class="stat-item">
-                <span class="value">+500</span>
-                <span class="label">زائر ومستفيد</span>
-            </div>
-        </div>
+<div class="section">
+  <div class="stats-grid">
+    <div class="scard"><div class="scard-ico">💡</div><span class="scard-val" data-count="15">0</span><span class="scard-lbl">مشروع رقمي</span></div>
+    <div class="scard"><div class="scard-ico">👥</div><span class="scard-val" data-count="500">0</span><span class="scard-lbl">زائر ومستفيد</span></div>
+  </div>
+</div>
 
-        <!-- الزر الرئيسي -->
-        <a href="works.html" class="cta-button">
-            🚀 تصفح معرض الأعمال
-        </a>
-    </main>
+<div class="section">
+  <div class="row-hd">
+    <div class="row-ttl">✦ أبرز الأعمال</div>
+    <a href="works.html" class="row-lnk">عرض الكل ←</a>
+  </div>
+  <div class="wscroll">
+    <a href="https://www.chatbase.co/chatbot-iframe/_gApu7rnjCHxPJVhTKlnR" target="_blank" class="wchip">
+      <div class="wt">ذكاء اصطناعي</div><div class="wi">🤖</div><div class="wn">المساعد الذكي</div>
+    </a>
+    <a href="https://alfale7.github.io/Book/index.html" target="_blank" class="wchip">
+      <div class="wt">مكتبة رقمية</div><div class="wi">📚</div><div class="wn">المكتبة الرقمية</div>
+    </a>
+    <a href="https://alfale7.github.io/Ahmed/" target="_blank" class="wchip">
+      <div class="wt">أمن سيبراني</div><div class="wi">🛡️</div><div class="wn">حماية رقمية</div>
+    </a>
+    <a href="https://alfale7.github.io/Eid/" target="_blank" class="wchip">
+      <div class="wt">مناسبات</div><div class="wi">🌙</div><div class="wn">تهنئة العيد</div>
+    </a>
+    <a href="works.html" class="wchip" style="border-color:rgba(200,151,58,.22)">
+      <div class="wt">المزيد</div><div class="wi">✦</div><div class="wn">+12 عمل آخر</div>
+    </a>
+  </div>
+</div>
 
-    <nav class="nav-bar">
-        <a href="index.html" class="nav-link active"><span>🏠</span>الرئيسية</a>
-        <a href="about.html" class="nav-link"><span>ℹ️</span>عن الصرح</a>
-        <a href="works.html" class="nav-link"><span>📂</span>الأعمال</a>
-        <a href="contact.html" class="nav-link"><span>📞</span>اتصل بنا</a>
-    </nav>
+<a href="about.html" class="hcard">
+  <div class="hc-ico">🏆</div>
+  <div>
+    <div class="hc-ttl">رؤيتنا نحو الخليج والعالم</div>
+    <div class="hc-sub">ابتكار تعليمي رقمي بمعايير منافسات الخليج</div>
+  </div>
+  <div class="hc-arr">←</div>
+</a>
 
-    <footer>
-        <p style="font-size: 0.7rem; color: #64748b; margin-top: 5px;">جميع الحقوق محفوظة &copy; 2026 - صرح اليرموك الرقمي</p>
-        <div class="counter-container">
-            <div id="sfc8nrj13xs4up3sn4r725pzb8pnzemeaug"></div>
-            <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=8nrj13xs4up3sn4r725pzb8pnzemeaug&down=async" async></script>
-        </div>
-    </footer>
+<nav class="bot">
+  <a href="index.html" class="ni active"><div class="ni-ico">🏠</div><div class="ni-lbl">الرئيسية</div></a>
+  <a href="works.html" class="ni"><div class="ni-ico">📂</div><div class="ni-lbl">الأعمال</div></a>
+  <a href="about.html" class="ni"><div class="ni-ico">🎓</div><div class="ni-lbl">عن الصرح</div></a>
+  <a href="contact.html" class="ni"><div class="ni-ico">📡</div><div class="ni-lbl">تواصل</div></a>
+</nav>
+
+<footer>
+  <p class="fc">جميع الحقوق محفوظة &copy; 2026 — <strong>صرح اليرموك الرقمي</strong></p>
+  <div class="ctrw">
+    <div id="sfc8nrj13xs4up3sn4r725pzb8pnzemeaug"></div>
+    <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=8nrj13xs4up3sn4r725pzb8pnzemeaug&down=async" async></script>
+  </div>
+</footer>
+</div>
+
+<script>
+(function(){
+  var cv=document.getElementById('bgCanvas'),cx=cv.getContext('2d'),W,H,pts=[];
+  function rsz(){W=cv.width=innerWidth;H=cv.height=innerHeight}rsz();
+  addEventListener('resize',rsz);
+  function Pt(){this.reset=function(){this.x=Math.random()*W;this.y=Math.random()*H;this.r=Math.random()*1.3+.3;this.vx=(Math.random()-.5)*.2;this.vy=(Math.random()-.5)*.2;this.a=Math.random()*.5+.1;this.gold=Math.random()>.55;this.ph=Math.random()*Math.PI*2;};this.reset();}
+  for(var i=0;i<80;i++)pts.push(new Pt());
+  function frame(){
+    cx.clearRect(0,0,W,H);
+    pts.forEach(function(p){
+      p.ph+=.015;var a=p.a*(.65+.35*Math.sin(p.ph));
+      cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      cx.fillStyle=p.gold?'rgba(200,151,58,'+a+')':'rgba(37,99,235,'+(a*.5)+')';
+      cx.fill();p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>W||p.y<0||p.y>H)p.reset();
+    });
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target,t=+el.dataset.count,d=1500,s=performance.now();(function step(n){var p=Math.min((n-s)/d,1),q=1-Math.pow(1-p,4);el.textContent=Math.floor(q*t)+(p>=1?'+':'');if(p<1)requestAnimationFrame(step);})(s);io.unobserve(el);}});},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(function(el){io.observe(el);});
+</script>
 
 </body>
 </html>
