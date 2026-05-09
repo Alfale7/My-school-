@@ -1,331 +1,212 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>المكتبة الرقمية - ثانوية اليرموك</title>
-  <meta name="description" content="المكتبة الرقمية لثانوية اليرموك - مرجعك الأول للمصادر التعليمية والكتب الرقمية.">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TGL6YLEPTK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TGL6YLEPTK');
+    </script>
 
-  <!-- وسمات Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://alfale7.github.io/Book/index.html">
-  <meta property="og:title" content="المكتبة الرقمية - ثانوية اليرموك">
-  <meta property="og:description" content="استكشف المصادر التعليمية، الكتب الرقمية، والخدمات التفاعلية">
-  <meta property="og:image" content="https://alfale7.github.io/Book/viwa.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    :root {
-      --primary: #6366f1;
-      --bg: #020617;
-      --card-bg: rgba(30, 41, 59, 0.5);
-      --glass: blur(20px);
-      --text: #f8fafc;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Tajawal', sans-serif;
-      background-color: var(--bg);
-      background-image: 
-        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(79, 70, 229, 0.1) 0px, transparent 50%);
-      color: var(--text);
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    .announcement {
-      background-color: #005f8f;
-      color: white; padding: 10px; text-align: center; font-weight: bold;
-      white-space: nowrap; overflow: hidden; font-size: 14px;
-    }
-    .announcement-text { display: inline-block; animation: slide 15s linear infinite; }
-    @keyframes slide { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-
-    header {
-      padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
-      background: rgba(15, 23, 42, 0.8); backdrop-filter: var(--glass);
-      border-bottom: 1px solid rgba(255,255,255,0.1); position: sticky; top: 0; z-index: 1000;
-    }
-
-    .brand { display: flex; align-items: center; gap: 10px; }
-    .logo { width: 55px; height: 55px; border-radius: 10px; background: white; padding: 3px; object-fit: contain; }
-    .header-text h1 { font-size: 18px; font-weight: 900; background: linear-gradient(to left, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-    .container { max-width: 1000px; margin: 10px auto; padding: 0 15px 100px 15px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-
-    .hero-box { grid-column: span 4; background: var(--card-bg); border-radius: 20px; padding: 12px; border: 1px solid rgba(255,255,255,0.1); order: 1; }
-    .hero-box iframe { width: 100%; height: 210px; border-radius: 12px; border: none; }
-
-    .intro-box { grid-column: span 4; background: var(--card-bg); border-radius: 20px; padding: 20px; border: 1px solid rgba(255,255,255,0.1); line-height: 1.6; font-size: 14px; border-right: 5px solid var(--primary); order: 2; }
-
-    .search-section { grid-column: span 4; text-align: center; margin: 5px 0; order: 3; }
-    .search-input { width: 100%; max-width: 500px; background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); padding: 12px 20px; border-radius: 30px; color: white; font-family: 'Tajawal'; outline: none; font-size: 14px; }
+    <meta property="og:title" content="الصرح الرقمي - اليرموك الثانوية">
+    <meta property="og:description" content="استعرض المبادرات والابتكارات الرقمية والتعليمية لطلاب ومنسوبي ثانوية اليرموك.">
+    <meta property="og:image" content="https://alfale7.github.io/My-school-/thumb.png">
+    <meta property="og:url" content="https://alfale7.github.io/My-school-/works.html">
+    <meta property="og:type" content="website">
     
-    .filter-buttons { margin-top: 12px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
-    .filter-buttons button { padding: 6px 14px; border-radius: 15px; border: none; background: var(--primary); color: white; cursor: pointer; font-weight: bold; font-size: 12px; }
+    <title>الصرح الرقمي - اليرموك الثانوية   </title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-glow: #1e3a8a; /* كحلي حي ومشرق */
+            --accent-gold: #c5a059;  /* ذهبي ملكي فاتح */
+            --bg-dark: #020617;     /* خلفية عميقة وأنيقة */
+            --card-light: #f8fafc;  /* أبيض مريح للعين */
+        }
 
-    .grid-container { grid-column: span 4; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; order: 4; }
-    @media (min-width: 768px) { .grid-container { grid-template-columns: repeat(4, 1fr); } }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
 
-    .source-card { background: var(--card-bg); backdrop-filter: var(--glass); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; padding: 20px; text-align: center; text-decoration: none; color: white; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-    .source-card:active { transform: scale(0.95); }
-    .source-card i { font-size: 28px; color: var(--primary); }
-    .source-card h3 { font-size: 15px; font-weight: 700; }
-    .source-card p { font-size: 10px; color: #94a3b8; }
+        body {
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 50% -20%, #2563eb, transparent 60%),
+                              radial-gradient(circle at 10% 90%, #1e3a8a, transparent 40%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            overflow: hidden;
+        }
 
-    .bottom-nav { position: fixed; bottom: 15px; left: 15px; right: 15px; background: rgba(30, 41, 59, 0.85); backdrop-filter: var(--glass); height: 60px; border-radius: 20px; display: flex; justify-content: space-around; align-items: center; border: 1px solid rgba(255,255,255,0.1); z-index: 2000; }
-    .nav-item { color: #94a3b8; text-decoration: none; display: flex; flex-direction: column; align-items: center; font-size: 16px; }
-    .nav-item.active { color: var(--primary); }
-    .nav-item span { font-size: 9px; margin-top: 3px; font-weight: 700; }
+        /* هيدر عصري ومشرق */
+        header {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid var(--accent-gold);
+        }
 
-    .footer-note { grid-column: span 4; text-align: center; padding: 30px 0; color: #94a3b8; font-size: 12px; order: 5; }
-    #no-results { grid-column: span 4; text-align: center; display: none; padding: 10px; color: #ff4757; order: 4; }
-  </style>
+        .logo-area { display: flex; align-items: center; gap: 10px; color: var(--accent-gold); font-weight: bold; }
+        .logo-area img { height: 45px; filter: brightness(0) invert(1); }
+
+        /* لوحة التحكم التفاعلية */
+        .dashboard {
+            flex: 1;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        /* كرت الترحيب الفاخر */
+        .welcome-card {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(37, 99, 235, 0.7));
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-card::after {
+            content: "🏛️";
+            position: absolute;
+            top: -10px; left: -10px;
+            font-size: 5rem;
+            opacity: 0.1;
+        }
+
+        .welcome-card h1 { font-size: 1.8rem; margin-bottom: 8px; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .welcome-card p { font-size: 0.9rem; color: #e2e8f0; line-height: 1.5; }
+
+        /* منطقة الإحصائيات المضيئة */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .stat-item {
+            background: var(--card-light);
+            padding: 25px 15px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            border-top: 5px solid var(--accent-gold);
+        }
+
+        .stat-item .value { font-size: 2.2rem; font-weight: 800; color: var(--primary-glow); display: block; }
+        .stat-item .label { font-size: 0.85rem; color: #64748b; font-weight: bold; }
+
+        /* الزر التفاعلي المضيء */
+        .cta-button {
+            background: linear-gradient(90deg, #b89535, #d4af37);
+            color: #1a2a6c;
+            padding: 18px;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 5px 20px rgba(184, 149, 53, 0.4);
+            transition: 0.3s;
+        }
+
+        .cta-button:active { transform: scale(0.95); }
+
+        /* شريط التنقل السفلي */
+        .nav-bar {
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #94a3b8;
+            font-size: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link.active { color: var(--accent-gold); }
+        .nav-link span { font-size: 1.3rem; }
+
+        footer {
+            background: #020617;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .counter-container { transform: scale(0.7); margin: 5px auto; }
+    </style>
 </head>
 <body>
 
-  <div class="announcement">
-    <div class="announcement-text">تنويه: يُعرض عبر هذا الشريط آخر التحديثات والإضافات في مكتبة اليرموك الرقمية.</div>
-  </div>
+    <header>
+        <div class="logo-area">🏛️ <span>مدرسة اليرموك الثانوية</span></div>
+        <div class="logo-area"><img src="logo.png" alt="وزارة التعليم"></div>
+    </header>
 
-  <header>
-    <div class="brand">
-      <img src="logo.jpg" alt="Logo" class="logo">
-      <div class="header-text">
-        <h1>المكتبة الرقمية</h1>
-        <p>ثانوية اليرموك</p>
-      </div>
-    </div>
-  </header>
+    <main class="dashboard">
+        <!-- الترحيب -->
+        <div class="welcome-card">
+            <h1>صرح اليرموك الرقمي</h1>
+            <p>مرحباً بك في المنصة الرسمية للابتكارات التعليمية والتقنية بمدرسة اليرموك</p>
+        </div>
 
-  <div class="container">
-    <div class="hero-box">
-      <iframe src="https://www.youtube.com/embed/mX6e42Q7cO0" allowfullscreen></iframe>
-    </div>
+        <!-- الإحصائيات -->
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="value">+15</span>
+                <span class="label">مشروع رقمي</span>
+            </div>
+            <div class="stat-item">
+                <span class="value">+500</span>
+                <span class="label">زائر ومستفيد</span>
+            </div>
+        </div>
 
-    <div class="intro-box">
-      <p>انطلاقًا من أهمية إثراء المحتوى الرقمي، تم إنشاء هذه المكتبة لتكون مرجعًا موثوقًا للطلاب والمعلمين. تهدف هذه المنصة إلى تسهيل الوصول للمعلومات، وتحفيز التعلم الذاتي، ودعم العملية التعليمية بأدوات حديثة.</p>
-    </div>
+        <!-- الزر الرئيسي -->
+        <a href="works.html" class="cta-button">
+            🚀 تصفح معرض الأعمال
+        </a>
+    </main>
 
-    <div class="search-section">
-      <input type="text" id="searchInput" class="search-input" placeholder="ابحث عن مصدر أو كتاب...">
-      <div class="filter-buttons">
-        <button onclick="filterItems('all')">الكل</button>
-        <button onclick="filterItems('book')">كتب</button>
-        <button onclick="filterItems('video')">فيديوهات</button>
-        <button onclick="filterItems('interactive')">تفاعلي</button>
-      </div>
-    </div>
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-link active"><span>🏠</span>الرئيسية</a>
+        <a href="about.html" class="nav-link"><span>ℹ️</span>عن الصرح</a>
+        <a href="works.html" class="nav-link"><span>📂</span>الأعمال</a>
+        <a href="contact.html" class="nav-link"><span>📞</span>اتصل بنا</a>
+    </nav>
 
-    <div id="no-results">عذراً، لا توجد نتائج.</div>
+    <footer>
+        <p style="font-size: 0.7rem; color: #64748b; margin-top: 5px;">جميع الحقوق محفوظة &copy; 2026 - صرح اليرموك الرقمي</p>
+        <div class="counter-container">
+            <div id="sfc8nrj13xs4up3sn4r725pzb8pnzemeaug"></div>
+            <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=8nrj13xs4up3sn4r725pzb8pnzemeaug&down=async" async></script>
+        </div>
+    </footer>
 
-    <div class="grid-container" id="library">
-      <!-- مدرستي -->
-      <a href="https://schools.madrasati.sa" target="_blank" class="source-card item interactive">
-        <i class="fas fa-graduation-cap"></i>
-        <h3>مدرستي</h3>
-        <p>الفصول والواجبات</p>
-      </a>
-
-      <!-- منصة عين -->
-      <a href="https://ien.edu.sa" target="_blank" class="source-card item book">
-        <i class="fas fa-book-open"></i>
-        <h3>منصة عين</h3>
-        <p>بوابة التعليم</p>
-      </a>
-
-      <!-- منصة أبعاد - جديد -->
-      <a href="https://moe.futurex.sa/" target="_blank" class="source-card item interactive">
-        <i class="fas fa-cubes"></i>
-        <h3>منصة أبعاد</h3>
-        <p>المسارات المهارية</p>
-      </a>
-
-      <!-- موهبة -->
-      <a href="https://www.mawhiba.org/" target="_blank" class="source-card item interactive">
-        <i class="fas fa-brain"></i>
-        <h3>موهبة</h3>
-        <p>رعاية الموهوبين</p>
-      </a>
-
-      <!-- مركز قياس -->
-      <a href="https://e-services.etec.gov.sa/" target="_blank" class="source-card item interactive">
-        <i class="fas fa-edit"></i>
-        <h3>مركز قياس</h3>
-        <p>القدرات والتحصيلي</p>
-      </a>
-
-      <!-- منصتي للاختبارات -->
-      <a href="https://ekhtibar.moe.gov.sa/" target="_blank" class="source-card item interactive">
-        <i class="fas fa-file-signature"></i>
-        <h3>منصتي للاختبارات</h3>
-        <p>الاختبارات المركزية</p>
-      </a>
-
-      <!-- منصة أبواب -->
-      <a href="https://abwaab.com/" target="_blank" class="source-card item interactive">
-        <i class="fas fa-door-open"></i>
-        <h3>منصة أبواب</h3>
-        <p>دروس تفاعلية</p>
-      </a>
-
-      <!-- بوابة المستقبل -->
-      <a href="https://fg.moe.gov.sa/" target="_blank" class="source-card item interactive">
-        <i class="fas fa-rocket"></i>
-        <h3>بوابة المستقبل</h3>
-        <p>التحول الرقمي</p>
-      </a>
-
-      <!-- منصة إثرائي -->
-      <a href="https://ethrai.sa/" target="_blank" class="source-card item interactive">
-        <i class="fas fa-laptop-code"></i>
-        <h3>منصة إثرائي</h3>
-        <p>التدريب الإلكتروني</p>
-      </a>
-
-      <!-- المعجم الوسيط -->
-      <a href="https://www.almaany.com/ar/dict/ar-ar/" target="_blank" class="source-card item book">
-        <i class="fas fa-spell-check"></i>
-        <h3>المعجم الوسيط</h3>
-        <p>قاموس اللغة العربية</p>
-      </a>
-
-      <!-- المكتبة الرقمية العربية -->
-      <a href="https://www.arabicdigitallibrary.com/" target="_blank" class="source-card item book">
-        <i class="fas fa-atlas"></i>
-        <h3>المكتبة العربية</h3>
-        <p>ملايين المصادر</p>
-      </a>
-
-      <!-- منصة تعلم الإنجليزية -->
-      <a href="https://ien.edu.sa/Home/English" target="_blank" class="source-card item interactive">
-        <i class="fas fa-language"></i>
-        <h3>English Learning</h3>
-        <p>تعلم الإنجليزية</p>
-      </a>
-
-      <!-- مؤسسة هنداوي -->
-      <a href="https://www.hindawi.org/" target="_blank" class="source-card item book">
-        <i class="fas fa-book-reader"></i>
-        <h3>مؤسسة هنداوي</h3>
-        <p>كتب مجانية</p>
-      </a>
-
-      <!-- موقع كتبي -->
-      <a href="https://www.kottby.net" target="_blank" class="source-card item book">
-        <i class="fas fa-file-pdf"></i>
-        <h3>موقع كتبي</h3>
-        <p>المناهج والحلول</p>
-      </a>
-
-      <!-- المكتبة السعودية -->
-      <a href="https://sdl.edu.sa" target="_blank" class="source-card item book">
-        <i class="fas fa-university"></i>
-        <h3>المكتبة السعودية</h3>
-        <p>البحث الرقمي</p>
-      </a>
-
-      <!-- منصة تميز -->
-      <a href="https://se.etec.gov.sa" target="_blank" class="source-card item interactive">
-        <i class="fas fa-star"></i>
-        <h3>منصة تميز</h3>
-        <p>تطوير المهارات</p>
-      </a>
-
-      <!-- قناة التقنيات التعليمية -->
-      <a href="https://www.youtube.com/@Edu_Tech" target="_blank" class="source-card item video">
-        <i class="fas fa-microchip"></i>
-        <h3>التقنيات التعليمية</h3>
-        <p>مهارات تقنية</p>
-      </a>
-
-      <!-- قناة عين -->
-      <a href="https://www.ientv.edu.sa/" target="_blank" class="source-card item video">
-        <i class="fab fa-youtube"></i>
-        <h3>قناة عين</h3>
-        <p>دروس مرئية</p>
-      </a>
-
-      <!-- وزارة التعليم -->
-      <a href="https://youtube.com/@moe_gov" target="_blank" class="source-card item video">
-        <i class="fas fa-tv"></i>
-        <h3>وزارة التعليم</h3>
-        <p>القناة الرسمية</p>
-      </a>
-
-      <!-- تواصل معنا -->
-      <a href="contact.html" class="source-card item interactive">
-        <i class="fas fa-envelope-open-text"></i>
-        <h3>تواصل معنا</h3>
-        <p>أرسل مقترحاتك</p>
-      </a>
-    </div>
-
-    <div class="footer-note">
-      <p>جميع الحقوق محفوظة © مدرسة اليرموك الثانوية</p>
-      <p style="font-weight: bold; margin-top: 5px; color: var(--primary);">مركز مصادر التعلم</p>
-    </div>
-  </div>
-
-  <div class="bottom-nav">
-    <a href="index.html" class="nav-item active">
-      <i class="fas fa-th-large"></i>
-      <span>الرئيسية</span>
-    </a>
-    <a href="kids.html" class="nav-item">
-      <i class="fas fa-gamepad"></i>
-      <span>الأنشطة</span>
-    </a>
-    <a href="ask.html" class="nav-item">
-      <i class="fas fa-comment-dots"></i>
-      <span>اسأل</span>
-    </a>
-    <a href="contact.html" class="nav-item">
-      <i class="fas fa-envelope"></i>
-      <span>تواصل</span>
-    </a>
-    <a href="downloads.html" class="nav-item">
-      <i class="fas fa-download"></i>
-      <span>تحميل</span>
-    </a>
-    <a href="certificate.html" class="nav-item">
-      <i class="fas fa-award"></i>
-      <span>شهادة</span>
-    </a>
-  </div>
-
-  <script>
-    const searchInput = document.getElementById('searchInput');
-    const items = document.querySelectorAll('.item');
-    const noResults = document.getElementById('no-results');
-
-    searchInput.addEventListener('input', () => {
-      const val = searchInput.value.toLowerCase();
-      let found = false;
-      items.forEach(item => {
-        if (item.textContent.toLowerCase().includes(val)) {
-          item.style.display = 'flex';
-          found = true;
-        } else {
-          item.style.display = 'none';
-        }
-      });
-      noResults.style.display = found ? 'none' : 'block';
-    });
-
-    function filterItems(type) {
-      searchInput.value = "";
-      noResults.style.display = 'none';
-      items.forEach(item => {
-        item.style.display = (type === 'all' || item.classList.contains(type)) ? 'flex' : 'none';
-      });
-    }
-  </script>
 </body>
 </html>
