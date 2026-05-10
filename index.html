@@ -48,13 +48,20 @@ animation:hdrIn .8s cubic-bezier(.16,1,.3,1) both;
 @keyframes hdrIn{from{transform:translateY(-70px);opacity:0}to{transform:translateY(0);opacity:1}}
 .hbrand{display:flex;align-items:center;gap:9px}
 .hicon{
-width:36px;height:36px;border-radius:10px;
-background:linear-gradient(135deg,#c8973a,#e8c46a);
+width:38px;height:38px;border-radius:10px;
+background:transparent;
+border:1.5px solid rgba(200,151,58,.6);
 display:grid;place-items:center;font-size:1rem;
-box-shadow:0 0 18px rgba(200,151,58,.5);flex-shrink:0;
+box-shadow:0 0 14px rgba(200,151,58,.3);flex-shrink:0;
+overflow:hidden;
+}
+.hicon img{
+width:100%;height:100%;
+object-fit:cover;
+mix-blend-mode:normal;
 }
 .hname{font-size:.8rem;font-weight:600;line-height:1.15;color:#fff}
-.hsub{font-size:.62rem;color:#c8973a;font-weight:300}
+.hsubtitle{font-size:.62rem;color:#c8973a;font-weight:300}
 .hlogo img{height:32px;filter:brightness(0) invert(1);opacity:.8}
 .hpill{
 display:flex;align-items:center;gap:5px;
@@ -64,6 +71,18 @@ font-size:.6rem;color:#e8c46a;font-weight:500;
 }
 .hdot{width:6px;height:6px;background:#4ade80;border-radius:50%;animation:blink 1.4s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.25;transform:scale(.5)}}
+
+/* SHARE BUTTON IN HEADER */
+.share-btn{
+width:34px;height:34px;border-radius:10px;
+background:rgba(200,151,58,.1);
+border:1px solid rgba(200,151,58,.28);
+color:#e8c46a;cursor:pointer;
+display:grid;place-items:center;
+transition:transform .2s cubic-bezier(.34,1.56,.64,1);
+flex-shrink:0;
+}
+.share-btn:active{transform:scale(.88)}
 
 /* HERO */
 .hero{
@@ -102,7 +121,6 @@ margin-bottom:8px;
 animation:up .9s cubic-bezier(.16,1,.3,1) .35s both;
 line-height:1.1;
 }
-/* “صرح” + “الرقمي” — وزن متوسط، حجم طبيعي */
 .htitle .t-normal{
 display:block;
 font-size:clamp(1.2rem,4.5vw,1.8rem);
@@ -110,7 +128,6 @@ font-weight:500;
 color:rgba(255,255,255,.9);
 letter-spacing:.02em;
 }
-/* “اليرموك” — الكلمة البطلة، ذهبية، أكبر لكن لا تفقد التوازن */
 .htitle .t-hero{
 display:block;
 font-size:clamp(2rem,7.5vw,3.2rem);
@@ -171,18 +188,14 @@ transition:transform .18s cubic-bezier(.34,1.56,.64,1);
 }
 .btn-ghost:active{transform:scale(.93)}
 
-/* SCROLL CUE */
-
-70%{transform:translateY(8px);opacity:.2}}
-
 /* STATS */
-.section{padding:0 18px 22px}
-.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.scard{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.065);border-radius:20px;padding:18px 12px;text-align:center;position:relative;overflow:hidden}
-.scard::before{content:’’;position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#c8973a,#e8c46a)}
-.scard-ico{font-size:1.5rem;margin-bottom:5px}
-.scard-val{display:block;font-size:2rem;font-weight:700;line-height:1;margin-bottom:3px;color:#e8c46a}
-.scard-lbl{font-size:.67rem;color:rgba(255,255,255,.42);font-weight:300}
+.section{padding:0 18px 14px}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.scard{background:rgba(255,255,255,.03);border:1px solid rgba(200,151,58,.15);border-radius:16px;padding:10px 8px;text-align:center;position:relative;overflow:hidden;box-shadow:0 0 12px rgba(200,151,58,.07),0 3px 12px rgba(0,0,0,.25)}
+.scard::before{content:’’;position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,151,58,.6),transparent)}
+.scard-ico{font-size:1rem;margin-bottom:2px}
+.scard-val{display:block;font-size:1.2rem;font-weight:700;line-height:1;margin-bottom:2px;color:#e8c46a}
+.scard-lbl{font-size:.6rem;color:rgba(255,255,255,.42);font-weight:300}
 
 /* WORKS */
 .row-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
@@ -242,6 +255,98 @@ footer{background:#030509;border-top:1px solid rgba(200,151,58,.15);padding:14px
 .ctrw{transform:scale(.65);transform-origin:center;margin:4px auto 0;opacity:.55}
 
 @keyframes up{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+/* ── SHARE OVERLAY ── */
+.share-overlay{
+position:fixed;inset:0;z-index:300;
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+opacity:0;pointer-events:none;
+transition:opacity .3s;
+}
+.share-overlay.show{opacity:1;pointer-events:all}
+
+/* ── SHARE SHEET ── */
+.share-sheet{
+position:fixed;bottom:0;left:0;right:0;z-index:301;
+background:#0d1525;
+border-radius:28px 28px 0 0;
+padding:14px 22px max(32px,env(safe-area-inset-bottom));
+transform:translateY(100%);
+transition:transform .4s cubic-bezier(.16,1,.3,1);
+border-top:1px solid rgba(200,151,58,.25);
+box-shadow:0 -8px 40px rgba(0,0,0,.5);
+}
+.share-sheet.show{transform:translateY(0)}
+
+.share-handle{
+width:36px;height:4px;border-radius:2px;
+background:rgba(255,255,255,.15);
+margin:0 auto 18px;
+}
+.share-title{
+font-size:1rem;font-weight:700;
+color:#e8c46a;text-align:center;margin-bottom:4px;
+}
+.share-sub{
+font-size:.7rem;color:rgba(255,255,255,.4);
+text-align:center;margin-bottom:20px;font-weight:300;
+}
+/* URL ROW */
+.share-url-row{
+display:flex;align-items:center;gap:10px;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(200,151,58,.2);
+border-radius:14px;padding:10px 14px;
+margin-bottom:22px;
+}
+.share-url-text{
+flex:1;font-size:.72rem;color:rgba(255,255,255,.55);
+font-weight:300;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+font-family:var(–f);
+}
+.share-copy-btn{
+flex-shrink:0;padding:6px 14px;border-radius:20px;
+background:linear-gradient(135deg,#c8973a,#e8c46a);
+color:#1a0d00;-webkit-text-fill-color:#1a0d00;
+border:none;font-family:var(–f);font-weight:600;font-size:.68rem;
+cursor:pointer;transition:transform .15s;
+}
+.share-copy-btn:active{transform:scale(.92)}
+.share-copy-btn.copied{background:linear-gradient(135deg,#22c55e,#4ade80)}
+
+/* PLATFORMS */
+.share-platforms{
+display:flex;justify-content:center;gap:18px;margin-bottom:22px;
+}
+.splatform{
+display:flex;flex-direction:column;align-items:center;gap:7px;
+text-decoration:none;background:none;border:none;cursor:pointer;
+font-family:var(–f);
+}
+.sp-icon{
+width:52px;height:52px;border-radius:18px;
+display:grid;place-items:center;
+transition:transform .2s cubic-bezier(.34,1.56,.64,1);
+}
+.splatform:active .sp-icon{transform:scale(.88)}
+.sp-icon svg{width:26px;height:26px}
+.splatform span{font-size:.62rem;font-weight:500;color:rgba(255,255,255,.55)}
+.whatsapp .sp-icon{background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);color:#25d366}
+.twitter  .sp-icon{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:#fff}
+.telegram .sp-icon{background:rgba(0,136,204,.12);border:1px solid rgba(0,136,204,.3);color:#0088cc}
+.native   .sp-icon{background:rgba(200,151,58,.1);border:1px solid rgba(200,151,58,.3);color:#e8c46a}
+
+/* CLOSE */
+.share-close{
+width:100%;padding:13px;border-radius:14px;
+background:rgba(255,255,255,.07);
+border:1px solid rgba(255,255,255,.1);
+color:rgba(255,255,255,.7);-webkit-text-fill-color:rgba(255,255,255,.7);
+font-family:var(–f);font-weight:500;font-size:.88rem;
+cursor:pointer;transition:background .2s;
+}
+.share-close:active{background:rgba(255,255,255,.12)}
 </style>
 
 </head>
@@ -251,10 +356,13 @@ footer{background:#030509;border-top:1px solid rgba(200,151,58,.15);padding:14px
 
 <header>
   <div class="hbrand">
-    <div class="hicon">🏛</div>
-    <div><div class="hname">اليرموك الثانوية</div><div class="hsub">الصرح الرقمي</div></div>
+    <div class="hicon"><img src="yarmok.png" alt="شعار اليرموك"></div>
+    <div><div class="hname">اليرموك الثانوية</div><div class="hsubtitle">الصرح الرقمي</div></div>
   </div>
   <div class="hpill"><div class="hdot"></div>مباشر</div>
+  <button class="share-btn" id="shareBtn" title="شارك الصرح">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+  </button>
   <div class="hlogo"><img src="logo.png" alt="وزارة التعليم"></div>
 </header>
 
@@ -271,13 +379,13 @@ footer{background:#030509;border-top:1px solid rgba(200,151,58,.15);padding:14px
     <a href="works.html" class="btn-prim">🚀 &nbsp;استعرض معرض الأعمال</a>
     <a href="about.html" class="btn-ghost">✦ &nbsp;تعرّف على الصرح</a>
   </div>
-</div>
 </section>
 
 <div class="section">
   <div class="stats-grid">
     <div class="scard"><div class="scard-ico">💡</div><span class="scard-val" data-count="15">0</span><span class="scard-lbl">مشروع رقمي</span></div>
     <div class="scard"><div class="scard-ico">👥</div><span class="scard-val" data-count="500">0</span><span class="scard-lbl">زائر ومستفيد</span></div>
+    <div class="scard"><div class="scard-ico">🌟</div><span class="scard-val" style="font-size:.9rem;line-height:1.2">رؤية<br>2030</span><span class="scard-lbl">نحن جزء منها</span></div>
   </div>
 </div>
 
@@ -308,8 +416,8 @@ footer{background:#030509;border-top:1px solid rgba(200,151,58,.15);padding:14px
 <a href="about.html" class="hcard">
   <div class="hc-ico">🏆</div>
   <div>
-    <div class="hc-ttl">رؤيتنا نحو الخليج والعالم</div>
-    <div class="hc-sub">ابتكار تعليمي رقمي بمعايير منافسات الخليج</div>
+    <div class="hc-ttl">من الفصل إلى العالم الرقمي</div>
+    <div class="hc-sub">نحوّل التعليم إلى تجربة رقمية مبهرة تفتح آفاقاً بلا حدود</div>
   </div>
   <div class="hc-arr">←</div>
 </a>
@@ -328,6 +436,46 @@ footer{background:#030509;border-top:1px solid rgba(200,151,58,.15);padding:14px
     <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=8nrj13xs4up3sn4r725pzb8pnzemeaug&down=async" async></script>
   </div>
 </footer>
+</div>
+
+<!-- SHARE MODAL -->
+
+<div class="share-overlay" id="shareOverlay"></div>
+<div class="share-sheet" id="shareSheet">
+  <div class="share-handle"></div>
+  <div class="share-title">شارك الصرح الرقمي</div>
+  <div class="share-sub">انشر مع أصدقائك وزملائك</div>
+  <div class="share-url-row">
+    <div class="share-url-text">alfale7.github.io/My-school-/</div>
+    <button class="share-copy-btn" id="copyBtn">نسخ</button>
+  </div>
+  <div class="share-platforms">
+    <a class="splatform whatsapp" id="waBtn" target="_blank">
+      <div class="sp-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </div>
+      <span>واتساب</span>
+    </a>
+    <a class="splatform twitter" id="twBtn" target="_blank">
+      <div class="sp-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </div>
+      <span>تويتر</span>
+    </a>
+    <a class="splatform telegram" id="tgBtn" target="_blank">
+      <div class="sp-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+      </div>
+      <span>تيليغرام</span>
+    </a>
+    <button class="splatform native" id="nativeShare">
+      <div class="sp-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      </div>
+      <span>مشاركة</span>
+    </button>
+  </div>
+  <button class="share-close" id="shareClose">إغلاق</button>
 </div>
 
 <script>
@@ -350,8 +498,39 @@ footer{background:#030509;border-top:1px solid rgba(200,151,58,.15);padding:14px
   }
   frame();
 })();
+
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target,t=+el.dataset.count,d=1500,s=performance.now();(function step(n){var p=Math.min((n-s)/d,1),q=1-Math.pow(1-p,4);el.textContent=Math.floor(q*t)+(p>=1?'+':'');if(p<1)requestAnimationFrame(step);})(s);io.unobserve(el);}});},{threshold:.5});
 document.querySelectorAll('[data-count]').forEach(function(el){io.observe(el);});
+
+/* SHARE */
+var siteUrl='https://alfale7.github.io/My-school-/';
+var siteTitle='الصرح الرقمي — ثانوية اليرموك';
+var shareMsg=encodeURIComponent(siteTitle+' '+siteUrl);
+document.getElementById('waBtn').href='https://wa.me/?text='+shareMsg;
+document.getElementById('twBtn').href='https://twitter.com/intent/tweet?text='+shareMsg;
+document.getElementById('tgBtn').href='https://t.me/share/url?url='+encodeURIComponent(siteUrl)+'&text='+encodeURIComponent(siteTitle);
+
+function openShare(){
+  document.getElementById('shareOverlay').classList.add('show');
+  document.getElementById('shareSheet').classList.add('show');
+}
+function closeShare(){
+  document.getElementById('shareOverlay').classList.remove('show');
+  document.getElementById('shareSheet').classList.remove('show');
+}
+document.getElementById('shareBtn').addEventListener('click',openShare);
+document.getElementById('shareClose').addEventListener('click',closeShare);
+document.getElementById('shareOverlay').addEventListener('click',closeShare);
+document.getElementById('copyBtn').addEventListener('click',function(){
+  navigator.clipboard.writeText(siteUrl).then(function(){
+    var b=document.getElementById('copyBtn');
+    b.textContent='تم ✓';b.classList.add('copied');
+    setTimeout(function(){b.textContent='نسخ';b.classList.remove('copied');},2000);
+  });
+});
+document.getElementById('nativeShare').addEventListener('click',function(){
+  if(navigator.share){navigator.share({title:siteTitle,url:siteUrl});}
+});
 </script>
 
 </body>

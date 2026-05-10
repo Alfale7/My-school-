@@ -19,9 +19,10 @@ body{font-family:var(--f);background:#030509;background-image:radial-gradient(el
 header{position:sticky;top:0;z-index:50;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;background:rgba(3,5,9,.82);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(200,151,58,.2);animation:hIn .7s cubic-bezier(.16,1,.3,1) both}
 @keyframes hIn{from{transform:translateY(-60px);opacity:0}to{transform:translateY(0);opacity:1}}
 .hbrand{display:flex;align-items:center;gap:9px}
-.hicon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#c8973a,#e8c46a);display:grid;place-items:center;font-size:.95rem;box-shadow:0 0 15px rgba(200,151,58,.45);flex-shrink:0}
+.hicon{width:38px;height:38px;border-radius:10px;background:transparent;border:1.5px solid rgba(200,151,58,.6);display:grid;place-items:center;font-size:.95rem;box-shadow:0 0 14px rgba(200,151,58,.3);flex-shrink:0;overflow:hidden}
+.hicon img{width:100%;height:100%;object-fit:cover}
 .hname{font-size:.8rem;font-weight:600;line-height:1.15;color:#fff}
-.hsub{font-size:.62rem;color:#c8973a;font-weight:300}
+.hsubtitle{font-size:.62rem;color:#c8973a;font-weight:300}
 .hlogo img{height:30px;filter:brightness(0) invert(1);opacity:.8}
 
 .about-hero{padding:30px 20px 20px;text-align:center;animation:up .8s cubic-bezier(.16,1,.3,1) .1s both}
@@ -115,6 +116,17 @@ footer{background:#030509;border-top:1px solid rgba(200,151,58,.15);padding:14px
 .fc strong{color:#e8c46a;font-weight:600}
 
 @keyframes up{from{transform:translateY(22px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+body.light .page-chip{background:rgba(200,151,58,.1);border-color:rgba(200,151,58,.35);color:#a07020}
+
+body.light .page-ttl{color:#1a1208}
+body.light .page-sub{color:rgba(26,18,8,.45)}
+body.light .pillar{background:rgba(255,255,255,.7);border-color:rgba(200,151,58,.22);box-shadow:0 2px 14px rgba(200,151,58,.1)}
+body.light .titem{background:rgba(255,255,255,.7);border-color:rgba(200,151,58,.18);box-shadow:0 2px 12px rgba(200,151,58,.08)}
+body.light .titem-txt{color:rgba(26,18,8,.55)}
+body.light .vcard{background:rgba(200,151,58,.08);border-color:rgba(200,151,58,.25)}
+body.light .vc-txt{color:rgba(26,18,8,.5)}
+body.light .quote-block{background:rgba(200,151,58,.06)}
 </style>
 
 </head>
@@ -124,8 +136,8 @@ footer{background:#030509;border-top:1px solid rgba(200,151,58,.15);padding:14px
 
 <header>
   <div class="hbrand">
-    <div class="hicon">🏛</div>
-    <div><div class="hname">اليرموك الثانوية</div><div class="hsub">الصرح الرقمي</div></div>
+    <div class="hicon"><img src="yarmok.png" alt="شعار اليرموك"></div>
+    <div><div class="hname">اليرموك الثانوية</div><div class="hsubtitle">الصرح الرقمي</div></div>
   </div>
   <div class="hlogo"><img src="logo.png" alt="وزارة التعليم"></div>
 </header>
@@ -139,7 +151,7 @@ footer{background:#030509;border-top:1px solid rgba(200,151,58,.15);padding:14px
 <div class="pillars">
   <div class="pillar"><div class="pico">💡</div><span class="pnum">15+</span><span class="plbl">مشروع</span></div>
   <div class="pillar"><div class="pico">👥</div><span class="pnum">500+</span><span class="plbl">مستفيد</span></div>
-  <div class="pillar"><div class="pico">🏆</div><span class="pnum">خليجي</span><span class="plbl">مستوى</span></div>
+  <div class="pillar"><div class="pico">🌟</div><span class="pnum" style="font-size:.85rem;line-height:1.2">رؤية<br>2030</span><span class="plbl">نحن جزء منها</span></div>
 </div>
 
 <div class="timeline-section">
@@ -164,7 +176,7 @@ footer{background:#030509;border-top:1px solid rgba(200,151,58,.15);padding:14px
   <div class="sec-ttl" style="padding:0 4px 14px">✦ محاور الابتكار</div>
   <div class="vcard"><div class="vc-ico">🤖</div><div><div class="vc-ttl">الذكاء الاصطناعي في التعليم</div><div class="vc-txt">تطبيق أدوات الذكاء الاصطناعي وبناء مساعدين ذكيين يخدمون المجتمع المدرسي</div></div></div>
   <div class="vcard"><div class="vc-ico">🛡️</div><div><div class="vc-ttl">الأمن الرقمي والوعي</div><div class="vc-txt">نشر ثقافة الأمن السيبراني عبر مبادرات توعوية رقمية مبتكرة</div></div></div>
-  <div class="vcard"><div class="vc-ico">🌐</div><div><div class="vc-ttl">التواصل العالمي</div><div class="vc-txt">المشاركة في منافسات الخليج لإثبات قدرة مدارسنا على المنافسة بمعايير دولية</div></div></div>
+  <div class="vcard"><div class="vc-ico">🚀</div><div><div class="vc-ttl">طلاب المستقبل</div><div class="vc-txt">نبني جيل الغد المتسلح بالتقنية والإبداع الرقمي ليقود مسيرة التحول في وطننا الغالي</div></div></div>
 </div>
 
 <div class="quote-block">
@@ -187,6 +199,8 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 document.querySelectorAll('.titem,.vcard,.quote-block').forEach(function(el){io.observe(el);});
 document.querySelectorAll('.titem').forEach(function(el,i){el.style.transitionDelay=i*.1+'s';});
 document.querySelectorAll('.vcard').forEach(function(el,i){el.style.transitionDelay=i*.08+'s';});
+
+
 </script>
 
 </body>
